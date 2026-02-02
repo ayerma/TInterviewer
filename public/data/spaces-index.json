@@ -1,0 +1,40 @@
+{
+  "spaces": [
+    {
+      "id": "java",
+      "name": "Java",
+      "description": "Core Java programming concepts and interview questions",
+      "topics": [
+        {
+          "id": "oop",
+          "name": "Object-Oriented Programming",
+          "description": "Fundamental OOP concepts in Java",
+          "questions": [
+            {
+              "id": "what-is-inheritance",
+              "title": "What is inheritance in Java?",
+              "filePath": "spaces/java/oop/what-is-inheritance.json"
+            },
+            {
+              "id": "polymorphism-types",
+              "title": "What are the types of polymorphism?",
+              "filePath": "spaces/java/oop/polymorphism-types.json"
+            }
+          ]
+        },
+        {
+          "id": "collections",
+          "name": "Collections Framework",
+          "description": "Java Collections API and data structures",
+          "questions": [
+            {
+              "id": "arraylist-vs-linkedlist",
+              "title": "What is the difference between ArrayList and LinkedList?",
+              "filePath": "spaces/java/collections/arraylist-vs-linkedlist.json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
