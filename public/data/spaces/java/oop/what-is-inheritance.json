@@ -1,0 +1,10 @@
+{
+  "id": "what-is-inheritance",
+  "title": "What is inheritance in Java?",
+  "answers": {
+    "junior": "Inheritance is a mechanism in Java where a class (child class) can inherit properties and methods from another class (parent class). It allows code reusability and establishes a relationship between classes.",
+    "middle": "Inheritance is one of the four pillars of OOP that allows a class to inherit fields and methods from a parent class using the 'extends' keyword. Java supports single inheritance (a class can extend only one class) but multiple inheritance through interfaces. The child class inherits all non-private members and can override methods to provide specific implementations.",
+    "senior": "Inheritance in Java implements the IS-A relationship and follows a single inheritance model to avoid the diamond problem. It supports method overriding with runtime polymorphism through dynamic method dispatch. Key considerations include: constructor chaining (super() must be the first statement), access modifiers (protected members are accessible in subclasses), final classes/methods prevent inheritance/overriding, and abstract classes force subclasses to implement specific behavior. The JVM uses method tables (vtables) for efficient method resolution at runtime.",
+    "tricky": "Deep dive: Inheritance affects memory layout (object headers include class metadata pointers), impacts serialization (parent class must be Serializable), and can create tight coupling. Common pitfalls: overriding equals/hashCode without following the contract, breaking Liskov Substitution Principle, using inheritance for code reuse instead of composition (favor composition over inheritance), and the fragile base class problem where parent changes break child classes. Constructor security: constructors can leak 'this' reference before full initialization in inheritance hierarchies."
+  }
+}
