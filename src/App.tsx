@@ -10,14 +10,12 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   return (
-    <HashRouter>
-      <MainLayout>
-        <Route path="/" component={() => <Navigate href="/spaces/java" />} />
-        <Route path="/spaces/:spaceId" component={SpaceView} />
-        <Route path="/spaces/:spaceId/:topicId" component={TopicView} />
-        <Route path="/spaces/:spaceId/:topicId/:questionId" component={QuestionDetail} />
-        <Route path="/*" component={NotFound} />
-      </MainLayout>
+    <HashRouter root={MainLayout}>
+      <Route path="/" component={() => <Navigate href="/spaces/java" />} />
+      <Route path="/spaces/:spaceId" component={SpaceView} />
+      <Route path="/spaces/:spaceId/:topicId" component={TopicView} />
+      <Route path="/spaces/:spaceId/:topicId/:questionId" component={QuestionDetail} />
+      <Route path="/*" component={NotFound} />
     </HashRouter>
   );
 }
