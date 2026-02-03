@@ -2,6 +2,7 @@ import { useParams } from '@solidjs/router';
 import { createResource, Show } from 'solid-js';
 import type { QuestionContent } from '../types/schema';
 import Breadcrumb from '../components/Breadcrumb';
+import QuestionNavigation from '../components/QuestionNavigation';
 
 async function fetchQuestionContent(spaceId: string, topicId: string, questionId: string): Promise<QuestionContent> {
   const response = await fetch(`/data/spaces/${spaceId}/${topicId}/${questionId}.json`);
@@ -75,6 +76,8 @@ export default function QuestionDetail() {
                           </p>
                         </div>
                       </div>
+
+                      <QuestionNavigation />
                     </div>
                   )}
                 </Show>
