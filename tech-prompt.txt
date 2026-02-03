@@ -75,26 +75,26 @@ IMPORTANT: Follow the instructions exactly. Return ONLY the strict JSON object.
 
 # Context: Original Application Idea
 
-Task: IN-22
-Summary: Implement space selector dropdown component
+Task: IN-23
+Summary: Implement breadcrumb navigation component
 
 ---
 
 # Current Task
 
-Issue: IN-22
-Summary: Implement space selector dropdown component
+Issue: IN-23
+Summary: Implement breadcrumb navigation component
 
 Description:
 Description:
 
-Create a dropdown selector in the top-right corner that allows users to switch between different Spaces (e.g., Java, Python, JavaScript). The selector should display the currently active space and show a dropdown menu when clicked. Changing the space should navigate to that space's default view (first topic or space overview). For initial implementation, populate from spaces-index.json with Java as the default space.
+Build a breadcrumb component that displays the current navigation path (Space > Topic > Question). Each breadcrumb segment should be clickable and navigate to that level. The breadcrumb should update automatically based on the current route. Display at the top of the main content area above the question title.
 
 
 
 Technical Notes:
 
-Use SolidJS createSignal for dropdown open/close state. Style dropdown with TailwindCSS using absolute positioning. Implement click-outside-to-close behavior. Use @solidjs/router useNavigate to change routes when space is selected. Display space name and optional icon. Dropdown should have smooth transition animation.
+Use @solidjs/router useLocation to derive breadcrumb segments from the current path. Use <For> to render breadcrumb items with separators (e.g., ' > ' or chevron icon). Each segment should be a clickable link using <A> component from @solidjs/router. Style with TailwindCSS with hover states. Handle edge case where user is at Space or Topic level (not Question level).
 
 
 
@@ -106,21 +106,21 @@ Story Points: 2
 
 Acceptance Criteria:
 
-- Dropdown displays list of available spaces from spaces-index.json
+- Breadcrumb displays current path as Space > Topic > Question
 
-- Currently selected space is highlighted in the dropdown
+- Each breadcrumb segment is clickable and navigates to that level
 
-- Clicking a space navigates to that space's route
+- Breadcrumb updates automatically when route changes
 
-- Dropdown closes when clicking outside or after selection
+- Last segment (current page) is not clickable or styled differently
 
-- Smooth open/close animation applied
+- Breadcrumb handles partial paths (e.g., only Space or Space > Topic)
 
-- Component positioned in top-right corner of the layout
+- Responsive truncation on narrow screens
 
 # Important Instructions
 
-- You MUST work ONLY on the current task defined above (IN-22)
+- You MUST work ONLY on the current task defined above (IN-23)
 - Parent tickets are provided for context only
 - Follow all technical requirements from the technical guide
 - Implement only what is specified in the task description and answered questions
