@@ -1,0 +1,10 @@
+{
+  "id": "throw-vs-throws",
+  "title": "What is the difference between throw and throws?",
+  "answers": {
+    "junior": "throw is used to throw an exception. throws is used to declare exceptions in method signature. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "throw creates and throws exception instances. throws declares checked exceptions that method may throw. Lorem ipsum dolor sit amet, consectetur adipiscing elit. throw followed by throwable instance, throws by exception types.",
+    "senior": "throw is executable statement that initiates exception propagation. throws is declaration informing callers of potential exceptions. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Multiple exception types in throws separated by commas.",
+    "tricky": "Discuss rethrowing exceptions, exception chaining, throws vs runtime exceptions, and method override restrictions. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

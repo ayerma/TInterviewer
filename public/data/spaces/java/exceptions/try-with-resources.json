@@ -1,0 +1,10 @@
+{
+  "id": "try-with-resources",
+  "title": "What is try-with-resources?",
+  "answers": {
+    "junior": "try-with-resources automatically closes resources like files after use. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "try-with-resources ensures AutoCloseable resources are closed automatically. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eliminates explicit finally blocks for resource cleanup.",
+    "senior": "Resources declared in try parentheses are closed in reverse order of declaration. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Handles suppressed exceptions from close() methods. Cleaner than manual cleanup.",
+    "tricky": "Discuss suppressed exceptions, custom AutoCloseable implementations, multiple resources, and close() order semantics. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

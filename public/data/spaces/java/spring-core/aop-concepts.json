@@ -1,0 +1,10 @@
+{
+  "id": "aop-concepts",
+  "title": "What is Aspect-Oriented Programming in Spring?",
+  "answers": {
+    "junior": "AOP lets you add cross-cutting concerns like logging or security to your code without changing it. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "AOP modularizes cross-cutting concerns using aspects, advice, pointcuts, and join points. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Common use cases: logging, transactions, security. Spring uses proxy-based AOP.",
+    "senior": "AOP separates cross-cutting concerns from business logic through declarative programming. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Advice types: before, after, around, after-returning, after-throwing. Pointcut expressions define where advice applies.",
+    "tricky": "Discuss proxy limitations (self-invocation), CGLIB vs JDK proxies, AspectJ integration, performance overhead, and ordering of aspects. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

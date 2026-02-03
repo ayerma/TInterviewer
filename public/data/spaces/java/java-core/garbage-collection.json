@@ -1,0 +1,10 @@
+{
+  "id": "garbage-collection",
+  "title": "How does garbage collection work in Java?",
+  "answers": {
+    "junior": "Garbage collection automatically removes objects that are no longer used to free up memory. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "GC identifies unreachable objects through reachability analysis from GC roots. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Generational GC divides heap into young and old generations.",
+    "senior": "Modern GC algorithms (G1GC, ZGC, Shenandoah) minimize pause times through concurrent marking and compaction. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tuning involves heap sizing, GC algorithm selection, and monitoring.",
+    "tricky": "Discuss write barriers, card tables, remembered sets, SATB marking, and low-latency GC techniques. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Compare G1GC vs ZGC vs Shenandoah trade-offs."
+  }
+}

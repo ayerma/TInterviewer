@@ -1,0 +1,10 @@
+{
+  "id": "try-catch-finally",
+  "title": "Explain try-catch-finally blocks",
+  "answers": {
+    "junior": "try contains code that might throw exceptions. catch handles exceptions. finally always executes. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "try-catch-finally ensures cleanup code runs regardless of exceptions. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Multiple catch blocks can handle different exception types.",
+    "senior": "finally executes even if try/catch has return statements. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Return values in finally override try/catch returns. Consider try-with-resources as cleaner alternative.",
+    "tricky": "Discuss finally block edge cases, return value precedence, exception suppression, and interaction with System.exit(). Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

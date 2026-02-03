@@ -1,0 +1,10 @@
+{
+  "id": "string-immutability",
+  "title": "Why are strings immutable in Java?",
+  "answers": {
+    "junior": "Strings are immutable to make them safe and secure. Once created, their value cannot be changed. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "String immutability enables string pool optimization, thread safety, and security for sensitive data. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hash code caching improves performance in collections.",
+    "senior": "Immutability provides security (class loading, reflection), thread safety without synchronization, and enables string interning for memory optimization. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Trade-off is new object creation for modifications.",
+    "tricky": "Consider String pool internals, memory implications of concatenation in loops, StringBuilder vs StringBuffer, and compact strings in Java 9+. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

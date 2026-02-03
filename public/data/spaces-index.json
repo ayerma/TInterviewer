@@ -6,31 +6,148 @@
       "description": "Core Java programming concepts and interview questions",
       "topics": [
         {
-          "id": "oop",
-          "name": "Object-Oriented Programming",
-          "description": "Fundamental OOP concepts in Java",
+          "id": "java-core",
+          "name": "Java Core",
+          "description": "Fundamental Java language features and concepts",
           "questions": [
             {
-              "id": "what-is-inheritance",
-              "title": "What is inheritance in Java?",
-              "filePath": "spaces/java/oop/what-is-inheritance.json"
+              "id": "what-is-jvm",
+              "title": "What is JVM and how does it work?",
+              "filePath": "spaces/java/java-core/what-is-jvm.json"
             },
             {
-              "id": "polymorphism-types",
-              "title": "What are the types of polymorphism?",
-              "filePath": "spaces/java/oop/polymorphism-types.json"
+              "id": "primitives-vs-wrappers",
+              "title": "What is the difference between primitives and wrapper classes?",
+              "filePath": "spaces/java/java-core/primitives-vs-wrappers.json"
+            },
+            {
+              "id": "string-immutability",
+              "title": "Why are strings immutable in Java?",
+              "filePath": "spaces/java/java-core/string-immutability.json"
+            },
+            {
+              "id": "equals-vs-hashcode",
+              "title": "What is the relationship between equals() and hashCode()?",
+              "filePath": "spaces/java/java-core/equals-vs-hashcode.json"
+            },
+            {
+              "id": "final-keyword",
+              "title": "What does the final keyword do in Java?",
+              "filePath": "spaces/java/java-core/final-keyword.json"
+            },
+            {
+              "id": "static-keyword",
+              "title": "Explain the static keyword in Java",
+              "filePath": "spaces/java/java-core/static-keyword.json"
+            },
+            {
+              "id": "garbage-collection",
+              "title": "How does garbage collection work in Java?",
+              "filePath": "spaces/java/java-core/garbage-collection.json"
             }
           ]
         },
         {
-          "id": "collections",
-          "name": "Collections Framework",
-          "description": "Java Collections API and data structures",
+          "id": "exceptions",
+          "name": "Exceptions",
+          "description": "Exception handling and error management in Java",
           "questions": [
             {
-              "id": "arraylist-vs-linkedlist",
-              "title": "What is the difference between ArrayList and LinkedList?",
-              "filePath": "spaces/java/collections/arraylist-vs-linkedlist.json"
+              "id": "checked-vs-unchecked",
+              "title": "What is the difference between checked and unchecked exceptions?",
+              "filePath": "spaces/java/exceptions/checked-vs-unchecked.json"
+            },
+            {
+              "id": "try-catch-finally",
+              "title": "Explain try-catch-finally blocks",
+              "filePath": "spaces/java/exceptions/try-catch-finally.json"
+            },
+            {
+              "id": "throw-vs-throws",
+              "title": "What is the difference between throw and throws?",
+              "filePath": "spaces/java/exceptions/throw-vs-throws.json"
+            },
+            {
+              "id": "custom-exceptions",
+              "title": "How do you create custom exceptions?",
+              "filePath": "spaces/java/exceptions/custom-exceptions.json"
+            },
+            {
+              "id": "try-with-resources",
+              "title": "What is try-with-resources?",
+              "filePath": "spaces/java/exceptions/try-with-resources.json"
+            },
+            {
+              "id": "exception-handling-best-practices",
+              "title": "What are exception handling best practices?",
+              "filePath": "spaces/java/exceptions/exception-handling-best-practices.json"
+            },
+            {
+              "id": "suppressed-exceptions",
+              "title": "What are suppressed exceptions?",
+              "filePath": "spaces/java/exceptions/suppressed-exceptions.json"
+            },
+            {
+              "id": "multi-catch-block",
+              "title": "How does multi-catch block work?",
+              "filePath": "spaces/java/exceptions/multi-catch-block.json"
+            }
+          ]
+        },
+        {
+          "id": "spring-core",
+          "name": "Spring Core",
+          "description": "Core Spring Framework concepts and dependency injection",
+          "questions": [
+            {
+              "id": "what-is-spring",
+              "title": "What is the Spring Framework?",
+              "filePath": "spaces/java/spring-core/what-is-spring.json"
+            },
+            {
+              "id": "dependency-injection",
+              "title": "What is dependency injection?",
+              "filePath": "spaces/java/spring-core/dependency-injection.json"
+            },
+            {
+              "id": "ioc-container",
+              "title": "What is the IoC container?",
+              "filePath": "spaces/java/spring-core/ioc-container.json"
+            },
+            {
+              "id": "bean-scopes",
+              "title": "What are the different bean scopes in Spring?",
+              "filePath": "spaces/java/spring-core/bean-scopes.json"
+            },
+            {
+              "id": "autowired-annotation",
+              "title": "How does @Autowired annotation work?",
+              "filePath": "spaces/java/spring-core/autowired-annotation.json"
+            },
+            {
+              "id": "component-vs-bean",
+              "title": "What is the difference between @Component and @Bean?",
+              "filePath": "spaces/java/spring-core/component-vs-bean.json"
+            },
+            {
+              "id": "application-context",
+              "title": "What is ApplicationContext?",
+              "filePath": "spaces/java/spring-core/application-context.json"
+            },
+            {
+              "id": "spring-bean-lifecycle",
+              "title": "Explain the Spring bean lifecycle",
+              "filePath": "spaces/java/spring-core/spring-bean-lifecycle.json"
+            },
+            {
+              "id": "profiles",
+              "title": "What are Spring profiles?",
+              "filePath": "spaces/java/spring-core/profiles.json"
+            },
+            {
+              "id": "aop-concepts",
+              "title": "What is Aspect-Oriented Programming in Spring?",
+              "filePath": "spaces/java/spring-core/aop-concepts.json"
             }
           ]
         }

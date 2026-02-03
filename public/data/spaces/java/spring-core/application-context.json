@@ -1,0 +1,10 @@
+{
+  "id": "application-context",
+  "title": "What is ApplicationContext?",
+  "answers": {
+    "junior": "ApplicationContext is the main Spring container that manages beans and their dependencies. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "ApplicationContext extends BeanFactory adding enterprise features: event publication, internationalization, resource loading. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Common implementations: AnnotationConfigApplicationContext, ClassPathXmlApplicationContext.",
+    "senior": "ApplicationContext provides bean lifecycle management, event propagation, declarative mechanisms, and integration points. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eagerly instantiates singleton beans at startup. Hierarchical contexts supported.",
+    "tricky": "Discuss context hierarchy, parent-child relationships, refresh cycles, and WebApplicationContext specifics. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}
