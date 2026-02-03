@@ -1,6 +1,7 @@
 import { useParams } from '@solidjs/router';
 import { createResource, Show } from 'solid-js';
 import type { QuestionContent } from '../types/schema';
+import Breadcrumb from '../components/Breadcrumb';
 
 async function fetchQuestionContent(spaceId: string, topicId: string, questionId: string): Promise<QuestionContent> {
   const response = await fetch(`/data/spaces/${spaceId}/${topicId}/${questionId}.json`);
@@ -26,6 +27,7 @@ export default function QuestionDetail() {
   return (
     <div class="flex-1 h-full overflow-auto bg-gray-50">
       <div class="max-w-4xl mx-auto p-8">
+        <Breadcrumb />
         <Show
           when={!params.questionId}
           fallback={
