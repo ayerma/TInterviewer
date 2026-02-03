@@ -1,0 +1,10 @@
+{
+  "id": "profiles",
+  "title": "What are Spring profiles?",
+  "answers": {
+    "junior": "Profiles let you define different configurations for different environments like dev, test, prod. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "Profiles enable conditional bean registration and configuration based on active profile. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use @Profile annotation or profile-specific property files. Activate via spring.profiles.active.",
+    "senior": "Profiles provide environment-specific configuration by selectively registering beans and properties. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Support complex expressions, multiple active profiles, and default profile fallback.",
+    "tricky": "Discuss profile composition, programmatic profile activation, testing with profiles, and profile-specific property resolution order. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

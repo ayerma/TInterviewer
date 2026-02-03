@@ -1,0 +1,10 @@
+{
+  "id": "autowired-annotation",
+  "title": "How does @Autowired annotation work?",
+  "answers": {
+    "junior": "@Autowired tells Spring to automatically inject dependencies. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "@Autowired performs dependency injection by type matching. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Can be used on constructors, setters, and fields. Use @Qualifier for disambiguation.",
+    "senior": "@Autowired uses type-based autowiring with optional required attribute. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Resolution: by type, then by qualifier, then by name. Constructor injection preferred over field.",
+    "tricky": "Discuss autowiring modes, circular dependency resolution, required vs optional, and comparison with @Inject and @Resource. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

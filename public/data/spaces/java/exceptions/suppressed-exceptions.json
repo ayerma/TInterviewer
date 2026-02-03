@@ -1,0 +1,10 @@
+{
+  "id": "suppressed-exceptions",
+  "title": "What are suppressed exceptions?",
+  "answers": {
+    "junior": "Suppressed exceptions are secondary exceptions that occur during resource cleanup. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "When try-with-resources closes resources, close() exceptions are suppressed if primary exception exists. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Retrieved via getSuppressed() method.",
+    "senior": "Suppressed exceptions preserve all error information when both try block and resource closing throw. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Primary exception takes precedence, suppressed attached as secondary.",
+    "tricky": "Discuss manual exception suppression with addSuppressed(), multi-resource scenarios, and debugging implications. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

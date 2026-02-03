@@ -1,0 +1,10 @@
+{
+  "id": "bean-scopes",
+  "title": "What are the different bean scopes in Spring?",
+  "answers": {
+    "junior": "Bean scopes define how many instances of a bean are created. Singleton means one instance, prototype means new each time. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "Scopes: singleton (default, one per container), prototype (new per request), request/session/application (web-specific). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Custom scopes can be defined.",
+    "senior": "Singleton beans are shared across container, prototype creates new instances per getBean() call. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Web scopes tied to HTTP lifecycle. Consider thread safety for singleton beans.",
+    "tricky": "Discuss scope proxy requirements, mixing scopes, custom scope implementation, and memory implications of different scopes. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

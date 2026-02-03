@@ -1,0 +1,10 @@
+{
+  "id": "final-keyword",
+  "title": "What does the final keyword do in Java?",
+  "answers": {
+    "junior": "final makes variables constant, methods non-overridable, and classes non-inheritable. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "final variables can be assigned once, final methods prevent overriding, final classes prevent extension. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enables compiler optimizations and immutability patterns.",
+    "senior": "final provides compile-time guarantees for immutability, enables safe publication in concurrent contexts, and allows JVM optimizations. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blank finals initialized in constructors.",
+    "tricky": "Discuss effectively final (lambda capturing), final on method parameters, final vs immutability, and performance implications. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

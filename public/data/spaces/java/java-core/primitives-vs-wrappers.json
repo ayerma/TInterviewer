@@ -1,0 +1,10 @@
+{
+  "id": "primitives-vs-wrappers",
+  "title": "What is the difference between primitives and wrapper classes?",
+  "answers": {
+    "junior": "Primitives are basic data types like int, double, boolean. Wrapper classes are objects like Integer, Double, Boolean. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "Primitives are stored on the stack with no methods, while wrappers are objects stored on the heap with utility methods. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Autoboxing/unboxing handles conversion automatically.",
+    "senior": "Primitives offer performance benefits with no object overhead, while wrappers enable null values and collections compatibility. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consider memory implications and cache coherency in performance-critical code.",
+    "tricky": "Discuss autoboxing pitfalls, wrapper caching (IntegerCache), identity vs equality issues with ==, and performance implications in loops. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

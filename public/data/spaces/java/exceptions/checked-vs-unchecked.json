@@ -1,0 +1,10 @@
+{
+  "id": "checked-vs-unchecked",
+  "title": "What is the difference between checked and unchecked exceptions?",
+  "answers": {
+    "junior": "Checked exceptions must be caught or declared. Unchecked exceptions don't need to be. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "Checked exceptions extend Exception, require compile-time handling. Unchecked exceptions extend RuntimeException, optional handling. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use checked for recoverable conditions.",
+    "senior": "Checked exceptions enforce error handling at compile time for recoverable scenarios. Unchecked for programming errors. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Trade-offs include API usability vs safety guarantees.",
+    "tricky": "Discuss exception handling anti-patterns, checked exception controversy, sneaky throws, and exception translation patterns. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+}

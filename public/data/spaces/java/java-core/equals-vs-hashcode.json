@@ -1,0 +1,10 @@
+{
+  "id": "equals-vs-hashcode",
+  "title": "What is the relationship between equals() and hashCode()?",
+  "answers": {
+    "junior": "equals() checks if two objects are equal. hashCode() returns a number for the object. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "middle": "Contract: if two objects are equal via equals(), they must have the same hashCode(). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Important for HashMap and HashSet functionality.",
+    "senior": "The contract ensures correct behavior in hash-based collections. Override both consistently or neither. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use Objects.equals() and Objects.hash() for implementation.",
+    "tricky": "Discuss hashCode distribution, collision handling, performance implications, and mutable objects in hash collections. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consider IdentityHashMap exceptions."
+  }
+}
