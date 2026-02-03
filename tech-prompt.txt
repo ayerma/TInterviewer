@@ -75,54 +75,52 @@ IMPORTANT: Follow the instructions exactly. Return ONLY the strict JSON object.
 
 # Context: Original Application Idea
 
-Story: IN-20
-Summary: Implement collapsible hierarchical navigation menu component
+Task: IN-22
+Summary: Implement space selector dropdown component
 
 ---
 
 # Current Task
 
-Issue: IN-20
-Summary: Implement collapsible hierarchical navigation menu component
+Issue: IN-22
+Summary: Implement space selector dropdown component
 
 Description:
 Description:
 
-Build the left sidebar navigation menu that displays the Space > Topics > Questions hierarchy. The menu must support expand/collapse functionality at each level. Clicking on a Space or Topic shows its children as a list of hyperlinks. Clicking on a Question navigates to that question's content in the main area. The menu should maintain its expanded/collapsed state during navigation. Implement using SolidJS reactive patterns with proper state management for UI state (expanded nodes).
+Create a dropdown selector in the top-right corner that allows users to switch between different Spaces (e.g., Java, Python, JavaScript). The selector should display the currently active space and show a dropdown menu when clicked. Changing the space should navigate to that space's default view (first topic or space overview). For initial implementation, populate from spaces-index.json with Java as the default space.
 
 
 
 Technical Notes:
 
-Use SolidJS createSignal or createStore to manage expanded/collapsed state for each node. Use <For> component to render lists recursively. Implement toggle icons (chevron/arrow) that rotate on expand/collapse. Style with TailwindCSS. Menu should be fixed position and scrollable independently. Consider using a recursive component pattern for nested levels. Highlight the currently active item based on route.
+Use SolidJS createSignal for dropdown open/close state. Style dropdown with TailwindCSS using absolute positioning. Implement click-outside-to-close behavior. Use @solidjs/router useNavigate to change routes when space is selected. Display space name and optional icon. Dropdown should have smooth transition animation.
 
 
 
 Type: component
 
-Story Points: 5
+Story Points: 2
 
 
 
 Acceptance Criteria:
 
-- Menu renders all Spaces, Topics, and Questions from spaces-index.json
+- Dropdown displays list of available spaces from spaces-index.json
 
-- Clicking Space/Topic expands/collapses to show children as hyperlinks
+- Currently selected space is highlighted in the dropdown
 
-- Clicking Question navigates to question detail view
+- Clicking a space navigates to that space's route
 
-- Expand/collapse state persists during navigation within the same session
+- Dropdown closes when clicking outside or after selection
 
-- Currently selected item is visually highlighted
+- Smooth open/close animation applied
 
-- Menu is collapsible (can hide/show entire left sidebar)
-
-- Responsive behavior for mobile (menu overlay or full-width)
+- Component positioned in top-right corner of the layout
 
 # Important Instructions
 
-- You MUST work ONLY on the current task defined above (IN-20)
+- You MUST work ONLY on the current task defined above (IN-22)
 - Parent tickets are provided for context only
 - Follow all technical requirements from the technical guide
 - Implement only what is specified in the task description and answered questions
