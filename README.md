@@ -4,9 +4,7 @@ Java Interview Q&A Application built with SolidJS, TailwindCSS, and Vite.
 
 ## Live Demo
 
-🚀 [View Live Application](https://[OWNER].github.io/TInterviewer/)
-
-> Replace `[OWNER]` with your GitHub username or organization name.
+🚀 [View Live Application](https://ayerma.github.io/TInterviewer/)
 
 ## Features
 
@@ -136,7 +134,7 @@ The preview server will serve the built application with the correct base path.
 
 After deployment, verify:
 
-- ✅ Application loads at `https://[OWNER].github.io/TInterviewer/`
+- ✅ Application loads at `https://ayerma.github.io/TInterviewer/`
 - ✅ Hash-based routing works (URLs contain `#/`)
 - ✅ All routes navigate correctly
 - ✅ JSON data files load from `public/data/`
