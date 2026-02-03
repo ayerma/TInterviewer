@@ -49,3 +49,21 @@ export interface SpacesIndex {
   /** Array of all available spaces */
   spaces: Space[];
 }
+
+/**
+ * Represents the content of a question answer.
+ * Contains different answer levels for different expertise levels.
+ */
+export interface QuestionContent {
+  /** Question identifier */
+  id: string;
+  /** Question title */
+  title: string;
+  /** Answers at different expertise levels */
+  answers: {
+    junior: string;
+    middle: string;
+    senior: string;
+    tricky: string;
+  };
+}
