@@ -1,14 +1,16 @@
 import { useParams } from '@solidjs/router';
-import { createResource, Show } from 'solid-js';
+import { createResource, createSignal, Show } from 'solid-js';
 import { Card, CardContent, Typography, Box, CircularProgress, Alert, AlertTitle, Paper } from '@suid/material';
 import ArticleIcon from '@suid/icons-material/Article';
 import ErrorOutlineIcon from '@suid/icons-material/ErrorOutline';
 import type { QuestionContent } from '../types/schema';
 import QuestionNavigation from '../components/QuestionNavigation';
+import AnswerLevelToggle, { type AnswerLevel } from '../components/AnswerLevelToggle';
 import { loadQuestion } from '../services/dataService';
 
 export default function QuestionDetail() {
   const params = useParams();
+  const [selectedLevel, setSelectedLevel] = createSignal<AnswerLevel>('junior');
 
   const [questionContent] = createResource(
     () => ({ spaceId: params.spaceId, topicId: params.topicId, questionId: params.questionId }),
@@ -60,6 +62,10 @@ export default function QuestionDetail() {
                       <Typography variant="h5" component="h2" fontWeight={600} gutterBottom sx={{ mb: 3 }}>
                         Answer
                       </Typography>
+                      <AnswerLevelToggle 
+                        selectedLevel={selectedLevel} 
+                        onLevelChange={setSelectedLevel}
+                      />
                       <Typography 
                         variant="body1" 
                         component="div" 
@@ -69,7 +75,7 @@ export default function QuestionDetail() {
                           color: 'text.primary'
                         }}
                       >
-                        {content().answers.junior}
+                        {content().answers[selectedLevel()]}
                       </Typography>
                     </CardContent>
                   </Card>
