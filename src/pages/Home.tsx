@@ -1,23 +1,50 @@
+import { Typography, Paper, List, ListItem, ListItemText, ListItemIcon, Box } from '@suid/material';
+import LooksOneIcon from '@suid/icons-material/LooksOne';
+import LooksTwoIcon from '@suid/icons-material/LooksTwo';
+import Looks3Icon from '@suid/icons-material/Looks3';
+import Looks4Icon from '@suid/icons-material/Looks4';
+
 export default function Home() {
   return (
-    <div>
-      <h1 class="text-4xl font-bold text-gray-800 mb-4">
+    <Box>
+      <Typography variant="h3" component="h1" gutterBottom fontWeight="bold" color="text.primary">
         Java Interview Q&A
-      </h1>
-      <p class="text-lg text-gray-600 mb-8">
+      </Typography>
+      <Typography variant="h6" color="text.secondary" paragraph sx={{ mb: 4 }}>
         Welcome! Select a question from the navigation menu to get started.
-      </p>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-2xl font-semibold text-gray-700 mb-4">
+      </Typography>
+      
+      <Paper elevation={1} sx={{ p: 4 }}>
+        <Typography variant="h5" component="h2" gutterBottom fontWeight="medium">
           Getting Started
-        </h2>
-        <ol class="list-decimal list-inside space-y-2 text-gray-600">
-          <li>Browse through the topics in the left sidebar</li>
-          <li>Expand a space to see its topics</li>
-          <li>Expand a topic to see its questions</li>
-          <li>Click on a question to view the answer</li>
-        </ol>
-      </div>
-    </div>
+        </Typography>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <LooksOneIcon color="primary" />
+            </ListItemIcon>
+            <ListItemText primary="Browse through the topics in the left sidebar" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <LooksTwoIcon color="primary" />
+            </ListItemIcon>
+            <ListItemText primary="Expand a space to see its topics" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <Looks3Icon color="primary" />
+            </ListItemIcon>
+            <ListItemText primary="Expand a topic to see its questions" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <Looks4Icon color="primary" />
+            </ListItemIcon>
+            <ListItemText primary="Click on a question to view the answer" />
+          </ListItem>
+        </List>
+      </Paper>
+    </Box>
   );
 }

@@ -1,5 +1,8 @@
 import { useParams } from '@solidjs/router';
 import { createResource, Show } from 'solid-js';
+import { Card, CardContent, Typography, Box, CircularProgress, Alert, AlertTitle, Paper } from '@suid/material';
+import ArticleIcon from '@suid/icons-material/Article';
+import ErrorOutlineIcon from '@suid/icons-material/ErrorOutline';
 import type { QuestionContent } from '../types/schema';
 import QuestionNavigation from '../components/QuestionNavigation';
 
@@ -31,67 +34,74 @@ export default function QuestionDetail() {
         <Show
           when={!questionContent.loading}
           fallback={
-            <div class="flex items-center justify-center py-20">
-              <div class="flex flex-col items-center gap-4">
-                <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                <p class="text-gray-600">Loading question...</p>
-              </div>
-            </div>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', py: 10 }}>
+              <CircularProgress size={60} />
+              <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+                Loading question...
+              </Typography>
+            </Box>
           }
         >
           <Show
             when={!questionContent.error}
             fallback={
-              <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-                <div class="flex items-start gap-3">
-                  <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <div>
-                    <h3 class="text-lg font-semibold text-red-900 mb-1">Failed to Load Question</h3>
-                    <p class="text-red-700">{questionContent.error?.message || 'An error occurred while loading the question content.'}</p>
-                  </div>
-                </div>
-              </div>
+              <Alert severity="error" icon={<ErrorOutlineIcon />}>
+                <AlertTitle>Failed to Load Question</AlertTitle>
+                {questionContent.error?.message || 'An error occurred while loading the question content.'}
+              </Alert>
             }
           >
             <Show when={questionContent()}>
               {(content) => (
-                <div class="space-y-6">
-                  <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                    <h1 class="text-3xl font-bold text-gray-900 leading-tight">
-                      {content().title}
-                    </h1>
-                  </div>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                  <Card elevation={2}>
+                    <CardContent sx={{ p: 3 }}>
+                      <Typography variant="h3" component="h1" fontWeight="bold" gutterBottom>
+                        {content().title}
+                      </Typography>
+                    </CardContent>
+                  </Card>
 
-                  <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-                    <div class="prose prose-lg max-w-none">
-                      <h2 class="text-xl font-semibold text-gray-800 mb-4">Answer</h2>
-                      <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">
+                  <Card elevation={2}>
+                    <CardContent sx={{ p: 4 }}>
+                      <Typography variant="h5" component="h2" fontWeight={600} gutterBottom sx={{ mb: 3 }}>
+                        Answer
+                      </Typography>
+                      <Typography 
+                        variant="body1" 
+                        component="div" 
+                        sx={{ 
+                          lineHeight: 1.8,
+                          whiteSpace: 'pre-wrap',
+                          color: 'text.primary'
+                        }}
+                      >
                         {content().answers.junior}
-                      </p>
-                    </div>
-                  </div>
+                      </Typography>
+                    </CardContent>
+                  </Card>
 
                   <QuestionNavigation />
-                </div>
+                </Box>
               )}
             </Show>
           </Show>
         </Show>
       }
     >
-      <div class="bg-blue-50 border border-blue-200 rounded-lg p-8">
-        <div class="flex flex-col items-center text-center gap-3">
-          <svg class="w-16 h-16 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-2">No Question Selected</h2>
-            <p class="text-gray-600">Select a question from the navigation menu to view its content.</p>
-          </div>
-        </div>
-      </div>
+      <Paper elevation={2} sx={{ p: 6, textAlign: 'center', bgcolor: 'primary.50' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+          <ArticleIcon sx={{ fontSize: 64, color: 'primary.light' }} />
+          <Box>
+            <Typography variant="h4" component="h2" fontWeight={600} gutterBottom>
+              No Question Selected
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Select a question from the navigation menu to view its content.
+            </Typography>
+          </Box>
+        </Box>
+      </Paper>
     </Show>
   );
 }

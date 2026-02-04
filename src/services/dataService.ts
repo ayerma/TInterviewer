@@ -1,6 +1,6 @@
 import { SpacesIndex, QuestionContent } from '../types/schema';
 
-const BASE_DATA_URL = import.meta.env.BASE_URL + 'data';
+const BASE_DATA_URL = `${import.meta.env.BASE_URL}data`;
 const SPACES_INDEX_PATH = `${BASE_DATA_URL}/spaces-index.json`;
 
 // In-memory cache for question files

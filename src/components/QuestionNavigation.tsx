@@ -1,5 +1,8 @@
 import { useNavigate, useParams } from '@solidjs/router';
 import { createResource, createSignal, onMount, onCleanup, Show } from 'solid-js';
+import { Button, Box, CircularProgress, Divider } from '@suid/material';
+import NavigateBeforeIcon from '@suid/icons-material/NavigateBefore';
+import NavigateNextIcon from '@suid/icons-material/NavigateNext';
 import type { SpacesIndex } from '../types/schema';
 
 interface NavigationInfo {
@@ -51,12 +54,12 @@ function calculateNavigation(
   // Calculate previous
   if (questionIndex > 0) {
     const prevQuestion = topic.questions[questionIndex - 1];
-    prevRoute = `/${spaceId}/${topicId}/${prevQuestion.id}`;
+    prevRoute = `/spaces/${spaceId}/${topicId}/${prevQuestion.id}`;
   } else if (topicIndex > 0) {
     // Wrap to previous topic's last question
     const prevTopic = space.topics[topicIndex - 1];
     const lastQuestion = prevTopic.questions[prevTopic.questions.length - 1];
-    prevRoute = `/${spaceId}/${prevTopic.id}/${lastQuestion.id}`;
+    prevRoute = `/spaces/${spaceId}/${prevTopic.id}/${lastQuestion.id}`;
   } else {
     isFirst = true;
   }
@@ -64,12 +67,12 @@ function calculateNavigation(
   // Calculate next
   if (questionIndex < topic.questions.length - 1) {
     const nextQuestion = topic.questions[questionIndex + 1];
-    nextRoute = `/${spaceId}/${topicId}/${nextQuestion.id}`;
+    nextRoute = `/spaces/${spaceId}/${topicId}/${nextQuestion.id}`;
   } else if (topicIndex < space.topics.length - 1) {
     // Wrap to next topic's first question
     const nextTopic = space.topics[topicIndex + 1];
     const firstQuestion = nextTopic.questions[0];
-    nextRoute = `/${spaceId}/${nextTopic.id}/${firstQuestion.id}`;
+    nextRoute = `/spaces/${spaceId}/${nextTopic.id}/${firstQuestion.id}`;
   } else {
     isLast = true;
   }
@@ -134,58 +137,32 @@ export default function QuestionNavigation() {
 
   return (
     <Show when={!spacesIndex.loading && params.questionId}>
-      <div class="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
-        <button
+      <Box sx={{ mt: 4, pt: 3, borderTop: 1, borderColor: 'divider', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Button
+          variant="outlined"
           onClick={handlePrevious}
           disabled={navigationInfo().isFirst || isNavigating()}
-          class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white transition-colors"
-          aria-label="Previous question"
+          startIcon={<NavigateBeforeIcon />}
         >
-          <svg 
-            class="w-5 h-5" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M15 19l-7-7 7-7" 
-            />
-          </svg>
-          <span>Previous</span>
-        </button>
+          Previous
+        </Button>
 
-        <div class="flex items-center gap-2 text-sm text-gray-500">
-          <Show when={isNavigating()}>
-            <div class="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+        <Show when={isNavigating()}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.secondary' }}>
+            <CircularProgress size={16} color="inherit" />
             <span>Loading...</span>
-          </Show>
-        </div>
+          </Box>
+        </Show>
 
-        <button
+        <Button
+          variant="outlined"
           onClick={handleNext}
           disabled={navigationInfo().isLast || isNavigating()}
-          class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white transition-colors"
-          aria-label="Next question"
+          endIcon={<NavigateNextIcon />}
         >
-          <span>Next</span>
-          <svg 
-            class="w-5 h-5" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M9 5l7 7-7 7" 
-            />
-          </svg>
-        </button>
-      </div>
+          Next
+        </Button>
+      </Box>
     </Show>
   );
 }

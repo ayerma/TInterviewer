@@ -1,5 +1,7 @@
 import { createResource, For, Show } from 'solid-js';
 import { A, useLocation, useParams } from '@solidjs/router';
+import { Breadcrumbs, Link, Typography } from '@suid/material';
+import NavigateNextIcon from '@suid/icons-material/NavigateNext';
 import type { SpacesIndex } from '../types/schema';
 
 interface BreadcrumbSegment {
@@ -9,7 +11,8 @@ interface BreadcrumbSegment {
 }
 
 async function fetchSpacesIndex(): Promise<SpacesIndex> {
-  const response = await fetch('/data/spaces-index.json');
+  const baseUrl = import.meta.env.BASE_URL;
+  const response = await fetch(`${baseUrl}data/spaces-index.json`);
   if (!response.ok) {
     throw new Error('Failed to load spaces index');
   }
@@ -36,7 +39,7 @@ export default function Breadcrumb() {
     // Add space segment
     segments.push({
       label: space.name,
-      path: `/${spaceId}`,
+      path: `/spaces/${spaceId}`,
       isLast: !topicId
     });
 
@@ -46,7 +49,7 @@ export default function Breadcrumb() {
       if (topic) {
         segments.push({
           label: topic.name,
-          path: `/${spaceId}/${topicId}`,
+          path: `/spaces/${spaceId}/${topicId}`,
           isLast: !questionId
         });
 
@@ -56,7 +59,7 @@ export default function Breadcrumb() {
           if (question) {
             segments.push({
               label: question.title,
-              path: `/${spaceId}/${topicId}/${questionId}`,
+              path: `/spaces/${spaceId}/${topicId}/${questionId}`,
               isLast: true
             });
           }
@@ -69,43 +72,33 @@ export default function Breadcrumb() {
 
   return (
     <Show when={!spacesData.loading && breadcrumbs().length > 0}>
-      <nav class="flex items-center space-x-2 text-sm mb-6" aria-label="Breadcrumb">
+      <Breadcrumbs
+        separator={<NavigateNextIcon fontSize="small" />}
+        aria-label="breadcrumb"
+        sx={{ mb: 3 }}
+      >
         <For each={breadcrumbs()}>
-          {(segment, index) => (
-            <>
-              <Show when={index() > 0}>
-                <svg 
-                  class="w-4 h-4 text-gray-400 flex-shrink-0" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </Show>
-              <Show
-                when={!segment.isLast}
-                fallback={
-                  <span 
-                    class="text-gray-600 font-medium truncate max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
-                    aria-current="page"
-                  >
-                    {segment.label}
-                  </span>
-                }
-              >
-                <A
-                  href={segment.path}
-                  class="text-blue-600 hover:text-blue-800 hover:underline transition-colors truncate max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
-                >
+          {(segment) => (
+            <Show
+              when={!segment.isLast}
+              fallback={
+                <Typography color="text.primary" fontWeight={500}>
                   {segment.label}
-                </A>
-              </Show>
-            </>
+                </Typography>
+              }
+            >
+              <Link
+                component={A}
+                href={segment.path}
+                underline="hover"
+                color="inherit"
+              >
+                {segment.label}
+              </Link>
+            </Show>
           )}
         </For>
-      </nav>
+      </Breadcrumbs>
     </Show>
   );
 }

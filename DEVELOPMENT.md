@@ -7,16 +7,13 @@ This guide provides step-by-step instructions for setting up the TInterviewer de
 ### Required Software
 
 1. **Node.js** (v14.0.0 or higher)
-
    - Download from: https://nodejs.org/
    - Verify installation: `node --version`
 
 2. **npm** (comes with Node.js)
-
    - Verify installation: `npm --version`
 
 3. **Git**
-
    - Download from: https://git-scm.com/
    - Verify installation: `git --version`
 

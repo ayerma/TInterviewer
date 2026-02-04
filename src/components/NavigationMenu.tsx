@@ -1,5 +1,8 @@
 import { createSignal, createResource, For, Show } from 'solid-js';
-import { A, useLocation } from '@solidjs/router';
+import { A, useLocation, useNavigate } from '@solidjs/router';
+import { List, ListItem, ListItemButton, ListItemText, CircularProgress, Box } from '@suid/material';
+import ExpandMoreIcon from '@suid/icons-material/ExpandMore';
+import ChevronRightIcon from '@suid/icons-material/ChevronRight';
 import type { SpacesIndex, Space, Topic, Question } from '../types/schema';
 
 interface ExpandedState {
@@ -11,7 +14,8 @@ interface NavigationMenuProps {
 }
 
 async function fetchSpacesIndex(): Promise<SpacesIndex> {
-  const response = await fetch('/data/spaces-index.json');
+  const baseUrl = import.meta.env.BASE_URL;
+  const response = await fetch(`${baseUrl}data/spaces-index.json`);
   if (!response.ok) {
     throw new Error('Failed to load spaces index');
   }
@@ -22,6 +26,7 @@ export default function NavigationMenu(props: NavigationMenuProps) {
   const [expanded, setExpanded] = createSignal<ExpandedState>({});
   const [spacesData] = createResource(fetchSpacesIndex);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleExpand = (key: string) => {
     setExpanded((prev) => ({
@@ -30,106 +35,137 @@ export default function NavigationMenu(props: NavigationMenuProps) {
     }));
   };
 
-  const isActive = (spaceId: string, topicId: string, questionId: string) => {
-    const pathname = location.pathname;
-    return pathname.includes(`/${spaceId}/${topicId}/${questionId}`);
+  const handleExpandClick = (e: MouseEvent, key: string) => {
+    e.stopPropagation();
+    toggleExpand(key);
   };
 
-  const ChevronIcon = (props: { isExpanded: boolean }) => (
-    <svg
-      class={`w-4 h-4 transition-transform duration-200 ${
-        props.isExpanded ? 'rotate-90' : ''
-      }`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-    </svg>
-  );
+  const handleSpaceClick = (spaceId: string) => {
+    navigate(`/spaces/${spaceId}`);
+    if (props.onNavigate) props.onNavigate();
+  };
+
+  const handleTopicClick = (spaceId: string, topicId: string) => {
+    navigate(`/spaces/${spaceId}/${topicId}`);
+    if (props.onNavigate) props.onNavigate();
+  };
 
   return (
-    <nav class="p-4">
-      <Show when={!spacesData.loading} fallback={<div class="text-gray-500">Loading...</div>}>
+    <Box sx={{ p: 1 }}>
+      <Show 
+        when={!spacesData.loading} 
+        fallback={
+          <Box sx={{ display: 'flex', justifyContent: 'center', p: 3 }}>
+            <CircularProgress />
+          </Box>
+        }
+      >
         <Show when={spacesData()}>
           {(data) => (
-            <ul class="space-y-2">
+            <List component="nav" disablePadding>
               <For each={data().spaces}>
                 {(space: Space) => {
                   const spaceKey = `space-${space.id}`;
                   const isSpaceExpanded = () => expanded()[spaceKey] || false;
 
                   return (
-                    <li>
+                    <>
                       {/* Space header */}
-                      <button
-                        onClick={() => toggleExpand(spaceKey)}
-                        class="w-full flex items-center justify-between px-3 py-2 text-left font-semibold text-gray-700 hover:bg-gray-100 rounded-md"
+                      <ListItemButton 
+                        onClick={() => handleSpaceClick(space.id)} 
+                        sx={{ pl: 2 }}
+                        selected={location.pathname === `/spaces/${space.id}`}
                       >
-                        <span>{space.name}</span>
-                        <ChevronIcon isExpanded={isSpaceExpanded()} />
-                      </button>
+                        <Box 
+                          component="span" 
+                          onClick={(e) => handleExpandClick(e, spaceKey)}
+                          sx={{ display: 'flex', alignItems: 'center', mr: 1, cursor: 'pointer', p: 0.5, '&:hover': { bgcolor: 'rgba(0,0,0,0.04)', borderRadius: '50%' } }}
+                        >
+                           {isSpaceExpanded() ? <ExpandMoreIcon /> : <ChevronRightIcon />}
+                        </Box>
+                        <ListItemText 
+                          primary={space.name} 
+                          primaryTypographyProps={{ fontWeight: 600 }}
+                        />
+                      </ListItemButton>
 
                       {/* Topics list */}
                       <Show when={isSpaceExpanded()}>
-                        <ul class="ml-4 mt-1 space-y-1 border-l-2 border-gray-200 pl-2">
+                        <List component="div" disablePadding sx={{ 
+                          overflow: 'hidden',
+                          transition: 'max-height 0.3s ease-in-out'
+                        }}>
                           <For each={space.topics}>
                             {(topic: Topic) => {
                               const topicKey = `topic-${space.id}-${topic.id}`;
                               const isTopicExpanded = () => expanded()[topicKey] || false;
 
                               return (
-                                <li>
+                                <>
                                   {/* Topic header */}
-                                  <button
-                                    onClick={() => toggleExpand(topicKey)}
-                                    class="w-full flex items-center justify-between px-3 py-2 text-left text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-md"
+                                  <ListItemButton 
+                                    onClick={() => handleTopicClick(space.id, topic.id)} 
+                                    sx={{ pl: 4 }}
+                                    selected={location.pathname === `/spaces/${space.id}/${topic.id}`}
                                   >
-                                    <span>{topic.name}</span>
-                                    <ChevronIcon isExpanded={isTopicExpanded()} />
-                                  </button>
+                                    <Box 
+                                      component="span" 
+                                      onClick={(e) => handleExpandClick(e, topicKey)}
+                                      sx={{ display: 'flex', alignItems: 'center', mr: 1, cursor: 'pointer', p: 0.5, '&:hover': { bgcolor: 'rgba(0,0,0,0.04)', borderRadius: '50%' } }}
+                                    >
+                                      {isTopicExpanded() ? <ExpandMoreIcon fontSize="small" /> : <ChevronRightIcon fontSize="small" />}
+                                    </Box>
+                                    <ListItemText 
+                                      primary={topic.name}
+                                      primaryTypographyProps={{ fontSize: '0.9rem', fontWeight: 500 }}
+                                    />
+                                  </ListItemButton>
 
                                   {/* Questions list */}
                                   <Show when={isTopicExpanded()}>
-                                    <ul class="ml-4 mt-1 space-y-1">
+                                    <List component="div" disablePadding sx={{ 
+                                      overflow: 'hidden',
+                                      transition: 'max-height 0.3s ease-in-out'
+                                    }}>
                                       <For each={topic.questions}>
                                         {(question: Question) => {
-                                          const questionPath = `/${space.id}/${topic.id}/${question.id}`;
-                                          const active = isActive(space.id, topic.id, question.id);
+                                          const questionPath = `/spaces/${space.id}/${topic.id}/${question.id}`;
+                                          const active = location.pathname === questionPath;
 
                                           return (
-                                            <li>
-                                              <A
+                                            <ListItem disablePadding>
+                                              <ListItemButton
+                                                component={A}
                                                 href={questionPath}
-                                                class={`block px-3 py-2 text-sm rounded-md transition-colors ${
-                                                  active
-                                                    ? 'bg-blue-100 text-blue-700 font-medium'
-                                                    : 'text-gray-600 hover:bg-gray-100'
-                                                }`}
+                                                selected={active}
                                                 onClick={props.onNavigate}
+                                                sx={{ pl: 8 }}
                                               >
-                                                {question.title}
-                                              </A>
-                                            </li>
+                                                <ListItemText 
+                                                  primary={question.title}
+                                                  primaryTypographyProps={{ fontSize: '0.875rem' }}
+                                                />
+                                              </ListItemButton>
+                                            </ListItem>
                                           );
                                         }}
                                       </For>
-                                    </ul>
+                                    </List>
                                   </Show>
-                                </li>
+                                </>
                               );
                             }}
                           </For>
-                        </ul>
+                        </List>
                       </Show>
-                    </li>
+                    </>
                   );
                 }}
               </For>
-            </ul>
+            </List>
           )}
         </Show>
       </Show>
-    </nav>
+    </Box>
   );
 }
