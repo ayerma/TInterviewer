@@ -5,14 +5,7 @@ import ArticleIcon from '@suid/icons-material/Article';
 import ErrorOutlineIcon from '@suid/icons-material/ErrorOutline';
 import type { QuestionContent } from '../types/schema';
 import QuestionNavigation from '../components/QuestionNavigation';
-
-async function fetchQuestionContent(spaceId: string, topicId: string, questionId: string): Promise<QuestionContent> {
-  const response = await fetch(`/data/spaces/${spaceId}/${topicId}/${questionId}.json`);
-  if (!response.ok) {
-    throw new Error(`Failed to load question: ${response.statusText}`);
-  }
-  return response.json();
-}
+import { loadQuestion } from '../services/dataService';
 
 export default function QuestionDetail() {
   const params = useParams();
@@ -23,7 +16,7 @@ export default function QuestionDetail() {
       if (!spaceId || !topicId || !questionId) {
         return null;
       }
-      return fetchQuestionContent(spaceId, topicId, questionId);
+      return loadQuestion(`spaces/${spaceId}/${topicId}/${questionId}.json`);
     }
   );
 

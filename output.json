@@ -1,0 +1,4 @@
+{
+  "pull_request_url": "https://github.com/ayerma/TInterviewer/pull/new/main",
+  "summary": "Fixed 404 errors on GitHub Pages by refactoring all data fetching to use a centralized dataService that correctly handles the application's base URL."
+}

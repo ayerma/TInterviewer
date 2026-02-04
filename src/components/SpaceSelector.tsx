@@ -4,19 +4,11 @@ import { Button, Menu, MenuItem, ListItemText, CircularProgress, Box } from '@su
 import ArrowDropDownIcon from '@suid/icons-material/ArrowDropDown';
 import CheckIcon from '@suid/icons-material/Check';
 import type { SpacesIndex, Space } from '../types/schema';
-
-async function fetchSpacesIndex(): Promise<SpacesIndex> {
-  const baseUrl = import.meta.env.BASE_URL;
-  const response = await fetch(`${baseUrl}data/spaces-index.json`);
-  if (!response.ok) {
-    throw new Error('Failed to load spaces index');
-  }
-  return response.json();
-}
+import { loadSpacesIndex } from '../services/dataService';
 
 export default function SpaceSelector() {
   const [anchorEl, setAnchorEl] = createSignal<null | HTMLElement>(null);
-  const [spacesData] = createResource(fetchSpacesIndex);
+  const [spacesData] = createResource(loadSpacesIndex);
   const navigate = useNavigate();
   const location = useLocation();
 

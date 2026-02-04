@@ -4,20 +4,13 @@ import { Button, Box, CircularProgress, Divider } from '@suid/material';
 import NavigateBeforeIcon from '@suid/icons-material/NavigateBefore';
 import NavigateNextIcon from '@suid/icons-material/NavigateNext';
 import type { SpacesIndex } from '../types/schema';
+import { loadSpacesIndex } from '../services/dataService';
 
 interface NavigationInfo {
   prevRoute: string | null;
   nextRoute: string | null;
   isFirst: boolean;
   isLast: boolean;
-}
-
-async function fetchSpacesIndex(): Promise<SpacesIndex> {
-  const response = await fetch('/data/spaces-index.json');
-  if (!response.ok) {
-    throw new Error('Failed to load spaces index');
-  }
-  return response.json();
 }
 
 function calculateNavigation(
@@ -85,7 +78,7 @@ export default function QuestionNavigation() {
   const navigate = useNavigate();
   const [isNavigating, setIsNavigating] = createSignal(false);
 
-  const [spacesIndex] = createResource(fetchSpacesIndex);
+  const [spacesIndex] = createResource(loadSpacesIndex);
 
   const navigationInfo = () => {
     if (!params.spaceId || !params.topicId || !params.questionId) {

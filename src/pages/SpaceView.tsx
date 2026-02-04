@@ -5,20 +5,13 @@ import WarningAmberIcon from '@suid/icons-material/WarningAmber';
 import ErrorOutlineIcon from '@suid/icons-material/ErrorOutline';
 import type { SpacesIndex } from '../types/schema';
 import ArticleIcon from '@suid/icons-material/Article';
-
-async function fetchSpacesIndex(): Promise<SpacesIndex> {
-  const response = await fetch('/data/spaces-index.json');
-  if (!response.ok) {
-    throw new Error(`Failed to load spaces index: ${response.statusText}`);
-  }
-  return response.json();
-}
+import { loadSpacesIndex } from '../services/dataService';
 
 export default function SpaceView() {
   const params = useParams();
   const navigate = useNavigate();
 
-  const [spacesIndex] = createResource(fetchSpacesIndex);
+  const [spacesIndex] = createResource(loadSpacesIndex);
 
   const currentSpace = () => {
     const index = spacesIndex();

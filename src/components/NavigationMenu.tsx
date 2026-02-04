@@ -4,6 +4,7 @@ import { List, ListItem, ListItemButton, ListItemText, CircularProgress, Box } f
 import ExpandMoreIcon from '@suid/icons-material/ExpandMore';
 import ChevronRightIcon from '@suid/icons-material/ChevronRight';
 import type { SpacesIndex, Space, Topic, Question } from '../types/schema';
+import { loadSpacesIndex } from '../services/dataService';
 
 interface ExpandedState {
   [key: string]: boolean;
@@ -13,18 +14,9 @@ interface NavigationMenuProps {
   onNavigate?: () => void;
 }
 
-async function fetchSpacesIndex(): Promise<SpacesIndex> {
-  const baseUrl = import.meta.env.BASE_URL;
-  const response = await fetch(`${baseUrl}data/spaces-index.json`);
-  if (!response.ok) {
-    throw new Error('Failed to load spaces index');
-  }
-  return response.json();
-}
-
 export default function NavigationMenu(props: NavigationMenuProps) {
   const [expanded, setExpanded] = createSignal<ExpandedState>({});
-  const [spacesData] = createResource(fetchSpacesIndex);
+  const [spacesData] = createResource(loadSpacesIndex);
   const location = useLocation();
   const navigate = useNavigate();
 
