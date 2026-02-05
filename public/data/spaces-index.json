@@ -150,6 +150,88 @@
               "filePath": "spaces/java/spring-core/aop-concepts.json"
             }
           ]
+        },
+        {
+          "id": "core-java-fundamentals-oop",
+          "name": "Core Java Fundamentals and OOP Principles",
+          "description": "Fundamental Java concepts and Object-Oriented Programming principles",
+          "questions": [
+            {
+              "id": "what-are-the-main-features-of-java-that-make-it-a-popular",
+              "title": "What are the main features of Java that make it a popular programming language?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-are-the-main-features-of-java-that-make-it-a-popular.json"
+            },
+            {
+              "id": "what-is-the-difference-between-jdk-jre-and-jvm",
+              "title": "What is the difference between JDK, JRE, and JVM?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-is-the-difference-between-jdk-jre-and-jvm.json"
+            },
+            {
+              "id": "explain-the-concept-of-platform-independence-in-java",
+              "title": "Explain the concept of 'platform independence' in Java.",
+              "filePath": "spaces/java/core-java-fundamentals-oop/explain-the-concept-of-platform-independence-in-java.json"
+            },
+            {
+              "id": "what-are-the-four-main-principles-of-object-oriented",
+              "title": "What are the four main principles of Object-Oriented Programming (OOP)?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-are-the-four-main-principles-of-object-oriented.json"
+            },
+            {
+              "id": "what-is-the-difference-between-is-a-and-has-a-relationships",
+              "title": "What is the difference between 'is-a' and 'has-a' relationships in OOP?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-is-the-difference-between-is-a-and-has-a-relationships.json"
+            },
+            {
+              "id": "what-is-the-purpose-of-the-static-keyword-in-java-and-how",
+              "title": "What is the purpose of the 'static' keyword in Java, and how is it used?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-is-the-purpose-of-the-static-keyword-in-java-and-how.json"
+            },
+            {
+              "id": "explain-the-difference-between-method-overloading-and",
+              "title": "Explain the difference between method overloading and method overriding.",
+              "filePath": "spaces/java/core-java-fundamentals-oop/explain-the-difference-between-method-overloading-and.json"
+            },
+            {
+              "id": "what-is-the-significance-of-the-final-keyword-in-java-and",
+              "title": "What is the significance of the 'final' keyword in Java, and where can it be applied?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-is-the-significance-of-the-final-keyword-in-java-and.json"
+            },
+            {
+              "id": "how-does-java-achieve-memory-management-through-garbage",
+              "title": "How does Java achieve memory management through Garbage Collection?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/how-does-java-achieve-memory-management-through-garbage.json"
+            },
+            {
+              "id": "what-is-the-difference-between-an-abstract-class-and-an",
+              "title": "What is the difference between an abstract class and an interface in Java?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-is-the-difference-between-an-abstract-class-and-an.json"
+            },
+            {
+              "id": "explain-the-concept-of-polymorphism-with-an-example",
+              "title": "Explain the concept of polymorphism with an example.",
+              "filePath": "spaces/java/core-java-fundamentals-oop/explain-the-concept-of-polymorphism-with-an-example.json"
+            },
+            {
+              "id": "what-is-the-role-of-the-super-keyword-in-java-and-how-does",
+              "title": "What is the role of the 'super' keyword in Java, and how does it differ from 'this'?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-is-the-role-of-the-super-keyword-in-java-and-how-does.json"
+            },
+            {
+              "id": "what-are-inner-classes-in-java-and-when-would-you-use-them",
+              "title": "What are inner classes in Java, and when would you use them?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-are-inner-classes-in-java-and-when-would-you-use-them.json"
+            },
+            {
+              "id": "how-does-java-handle-multiple-inheritance-and-what-are-the",
+              "title": "How does Java handle multiple inheritance, and what are the challenges it addresses?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/how-does-java-handle-multiple-inheritance-and-what-are-the.json"
+            },
+            {
+              "id": "what-are-some-common-pitfalls-or-anti-patterns-in-applying",
+              "title": "What are some common pitfalls or anti-patterns in applying OOP principles in Java?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/what-are-some-common-pitfalls-or-anti-patterns-in-applying.json"
+            }
+          ]
         }
       ]
     }
