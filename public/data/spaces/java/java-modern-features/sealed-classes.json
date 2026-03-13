@@ -1,0 +1,10 @@
+{
+  "id": "sealed-classes",
+  "title": "How do Java 17's sealed classes help in designing and modeling domain-specific objects?",
+  "answers": {
+    "junior": "Sealed classes in Java 17 restrict which classes can extend or implement them, creating a closed hierarchy that enables better domain modeling by explicitly defining all allowed subtypes within the codebase.",
+    "middle": "This is particularly powerful for domain-specific objects because it allows you to model finite sets of related types\u2014such as payment methods (Credit, Debit, PayPal) or user roles (Admin, Moderator, User)\u2014without exposing the inheritance hierarchy to unexpected implementations. For example, you might declare: sealed class PaymentMethod permits CreditCard, DebitCard, PayPalAccount, which guarantees that these are the only valid payment types in your domain, improving code clarity and maintainability.",
+    "senior": "Sealed classes integrate seamlessly with pattern matching in switch statements, enabling exhaustiveness checking where the compiler verifies that all permitted subtypes are handled: switch(payment) { case CreditCard cc -> ...; case DebitCard db -> ...; case PayPalAccount pp -> ...; } will error if you forget a case, preventing runtime bugs. This creates a self-documenting API where the contract is enforced at compile-time rather than requiring defensive null checks or instanceof chains scattered throughout your code.",
+    "tricky": "Unlike open hierarchies where any class can extend your type from anywhere, sealed classes make it clear that the set of subtypes is intentional and fixed, making refactoring safer since you can modify a permitted subtype knowing that only classes within the sealed hierarchy depend on it. In domain-driven design, this translates to stronger domain models that prevent invalid states and reduce cognitive load by explicitly constraining the problem space, making code more robust and easier to reason about at scale."
+  }
+}

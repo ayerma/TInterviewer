@@ -168,6 +168,88 @@
               "filePath": "spaces/java/collections/custom-collection-class-design.json"
             }
           ]
+        },
+        {
+          "id": "java-modern-features",
+          "name": "Java 8+ Modern Features",
+          "description": "In-depth coverage of Java 8 and modern language features introduced in Java 8-17",
+          "questions": [
+            {
+              "id": "java-8-key-features",
+              "title": "What are some of the key features introduced in Java 8?",
+              "filePath": "spaces/java/java-modern-features/java-8-key-features.json"
+            },
+            {
+              "id": "lambda-expressions",
+              "title": "What is a lambda expression in Java and why is it useful?",
+              "filePath": "spaces/java/java-modern-features/lambda-expressions.json"
+            },
+            {
+              "id": "stream-api",
+              "title": "Explain the purpose and advantages of the Stream API introduced in Java 8.",
+              "filePath": "spaces/java/java-modern-features/stream-api.json"
+            },
+            {
+              "id": "functional-interfaces",
+              "title": "What is the purpose of the Functional Interface annotation in Java 8?",
+              "filePath": "spaces/java/java-modern-features/functional-interfaces.json"
+            },
+            {
+              "id": "optional-class",
+              "title": "How does the Optional class help in avoiding null pointer exceptions?",
+              "filePath": "spaces/java/java-modern-features/optional-class.json"
+            },
+            {
+              "id": "method-references",
+              "title": "What are method references in Java 8, and how do they differ from lambda expressions?",
+              "filePath": "spaces/java/java-modern-features/method-references.json"
+            },
+            {
+              "id": "default-methods",
+              "title": "What are default methods in interfaces, and why were they introduced in Java 8?",
+              "filePath": "spaces/java/java-modern-features/default-methods.json"
+            },
+            {
+              "id": "date-time-api",
+              "title": "How does the new Date-Time API (java.time) differ from the previous java.util.Date and java.util.Calendar classes?",
+              "filePath": "spaces/java/java-modern-features/date-time-api.json"
+            },
+            {
+              "id": "parallel-streams",
+              "title": "What is the difference between parallelStream() and stream() in Java 8?",
+              "filePath": "spaces/java/java-modern-features/parallel-streams.json"
+            },
+            {
+              "id": "completable-future",
+              "title": "Explain the purpose of CompletableFuture introduced in Java 8 and how it differs from a Future.",
+              "filePath": "spaces/java/java-modern-features/completable-future.json"
+            },
+            {
+              "id": "java-9-modules",
+              "title": "How does the Java 9 module system (Project Jigsaw) improve encapsulation and modularity?",
+              "filePath": "spaces/java/java-modern-features/java-9-modules.json"
+            },
+            {
+              "id": "var-keyword",
+              "title": "Describe the improvements introduced in Java 10's 'var' keyword and provide use cases.",
+              "filePath": "spaces/java/java-modern-features/var-keyword.json"
+            },
+            {
+              "id": "http-client",
+              "title": "What is the difference between a single-tier and a multi-tiered application in the context of Java's new HTTP/2 client (introduced in Java 11)?",
+              "filePath": "spaces/java/java-modern-features/http-client.json"
+            },
+            {
+              "id": "sealed-classes",
+              "title": "How do Java 17's sealed classes help in designing and modeling domain-specific objects?",
+              "filePath": "spaces/java/java-modern-features/sealed-classes.json"
+            },
+            {
+              "id": "records-class",
+              "title": "Explain how records, introduced in Java 14, simplify the creation of data-carrying classes and their use cases.",
+              "filePath": "spaces/java/java-modern-features/records-class.json"
+            }
+          ]
         }
       ]
     }

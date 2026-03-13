@@ -1,0 +1,10 @@
+{
+  "id": "stream-api",
+  "title": "Explain the purpose and advantages of the Stream API introduced in Java 8.",
+  "answers": {
+    "junior": "The Stream API introduced in Java 8 enables functional-style operations on collections and arrays, allowing developers to express complex data transformations in a declarative manner rather than through imperative loops.",
+    "middle": "Its primary purpose is to provide a fluent, composable way to filter, map, and reduce data while promoting parallelization opportunities without explicit thread management. A key advantage is lazy evaluation\u2014intermediate operations like filter and map don't execute until a terminal operation like collect, forEach, or reduce is called, which can significantly improve performance by avoiding unnecessary iterations.",
+    "senior": "Streams enable concise, readable code: comparing list.stream().filter(x -> x > 10).map(x -> x * 2).collect(Collectors.toList()) to traditional nested loops with explicit condition checks demonstrates how much cleaner functional composition becomes. Another major advantage is seamless parallelism\u2014converting stream() to parallelStream() instantly enables multi-threaded processing without managing thread pools or synchronization, making it ideal for CPU-intensive operations on large datasets.",
+    "tricky": "Streams also support method chaining and composition of reusable functions, reducing code duplication and improving maintainability. The API handles iteration details internally, freeing developers to focus on the \"what\" rather than the \"how,\" and works with various terminal operations like collecting into different collection types, finding elements, or performing reduction operations. Important considerations include understanding that streams are not reusable\u2014each stream must start fresh from the source\u2014and being aware that for small datasets or when side effects are needed, traditional loops may be more appropriate due to the overhead of stream infrastructure."
+  }
+}

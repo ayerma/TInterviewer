@@ -1,0 +1,10 @@
+{
+  "id": "optional-class",
+  "title": "How does the Optional class help in avoiding null pointer exceptions?",
+  "answers": {
+    "junior": "Optional is a container class introduced in Java 8 that represents a value that may or may not be present, providing a more elegant alternative to null checks and reducing the risk of NullPointerException.",
+    "middle": "Instead of returning null from a method, you wrap the potential value in an Optional using Optional.of(value) for non-null values or Optional.empty() for absent values, forcing callers to explicitly handle both cases. The key advantage is that Optional provides a fluent API for working with values: you can chain operations like map(function), filter(predicate), and flatMap(function) without writing tedious null checks, and use terminal operations like orElse(defaultValue), orElseThrow(exception), or ifPresent(consumer) to safely extract or react to the value.",
+    "senior": "For example, instead of writing if (user != null && user.getAddress() != null && user.getAddress().getZipCode() != null) zipCode = user.getAddress().getZipCode();, you can write String zipCode = user.flatMap(User::getAddress).map(Address::getZipCode).orElse(\"00000\");. Optional encourages a functional programming style and makes code more readable by making null handling intentions explicit in the type signature\u2014methods returning Optional<T> signal that the result might be absent.",
+    "tricky": "However, avoid common pitfalls like Optional.of(variable) when the variable could be null (use Optional.ofNullable instead), checking isPresent() before calling get() which defeats the purpose, using Optional for collection elements or stream operators where Optional.orElse(null) is preferable, or storing Optional as a field in classes since it's designed for return values and method parameters. Remember that Optional is not a replacement for null\u2014it's a replacement for null return values in APIs\u2014and for nullable fields you should still use null or consider alternative patterns like collections or primitive defaults."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "functional-interfaces",
+  "title": "What is the purpose of the Functional Interface annotation in Java 8?",
+  "answers": {
+    "junior": "The @FunctionalInterface annotation in Java 8 marks an interface as a functional interface, meaning it contains exactly one abstract method (known as a Single Abstract Method or SAM).",
+    "middle": "This annotation serves as a compiler-level contract that enables interfaces to be used with lambda expressions and method references, which are the cornerstone of Java's functional programming paradigm introduced in Java 8. The primary purpose is to enforce that an interface maintains the functional contract\u2014if a developer attempts to add a second abstract method to an interface marked with @FunctionalInterface, the compiler will throw an error, preventing accidental violations of this contract.",
+    "senior": "While the annotation is optional (an interface with a single abstract method is implicitly functional), using it provides documentation, intent clarity, and compiler verification, making code more maintainable and expressive. Common examples include Runnable with its run() method, Comparator<T> with its compare() method, and Predicate<T> with its test() method.",
+    "tricky": "The functional interface enables concise syntax like new Thread(() -> System.out.println(\"Hello\")).start() instead of creating anonymous inner classes, and it's essential for Stream API operations such as stream.filter(s -> s.length() > 5).collect(Collectors.toList()) where the lambda expression is converted to a functional interface implementation at compile time. Best practice is to apply @FunctionalInterface to custom interfaces that are designed to be used functionally, both to document your intent and to protect against future modifications that would break the functional contract. The JVM handles the conversion of lambda expressions to functional interface implementations through invokedynamic bytecode instruction, providing performance benefits while maintaining type safety through the compiler's verification of the functional interface contract."
+  }
+}
