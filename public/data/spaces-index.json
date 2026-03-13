@@ -86,6 +86,88 @@
               "filePath": "spaces/java/core-java-fundamentals-oop/what-are-some-common-pitfalls-or-anti-patterns-in-applying.json"
             }
           ]
+        },
+        {
+          "id": "collections",
+          "name": "Java Collections Framework",
+          "description": "Data structures, algorithms, and concurrency in the Java Collections Framework",
+          "questions": [
+            {
+              "id": "what-is-the-java-collections-framework",
+              "title": "What is the Java Collections Framework and why is it important?",
+              "filePath": "spaces/java/collections/what-is-the-java-collections-framework.json"
+            },
+            {
+              "id": "main-interfaces-and-classes-in-collections",
+              "title": "What are the main interfaces and classes provided by the Java Collections Framework?",
+              "filePath": "spaces/java/collections/main-interfaces-and-classes-in-collections.json"
+            },
+            {
+              "id": "list-vs-set-vs-map",
+              "title": "What is the difference between a List, a Set, and a Map in the Collections Framework?",
+              "filePath": "spaces/java/collections/list-vs-set-vs-map.json"
+            },
+            {
+              "id": "collection-interface-vs-collections-utility-class",
+              "title": "Explain the purpose of the Collection interface. How does it differ from the Collections utility class?",
+              "filePath": "spaces/java/collections/collection-interface-vs-collections-utility-class.json"
+            },
+            {
+              "id": "arraylist-vs-linkedlist",
+              "title": "What is the difference between ArrayList and LinkedList?",
+              "filePath": "spaces/java/collections/arraylist-vs-linkedlist.json"
+            },
+            {
+              "id": "how-hashset-ensures-uniqueness",
+              "title": "How does HashSet ensure uniqueness of its elements?",
+              "filePath": "spaces/java/collections/how-hashset-ensures-uniqueness.json"
+            },
+            {
+              "id": "hashmap-vs-hashtable",
+              "title": "What is the difference between HashMap and Hashtable?",
+              "filePath": "spaces/java/collections/hashmap-vs-hashtable.json"
+            },
+            {
+              "id": "treeset-vs-hashset-performance",
+              "title": "How is the performance of TreeSet compared to HashSet, and when would you choose one over the other?",
+              "filePath": "spaces/java/collections/treeset-vs-hashset-performance.json"
+            },
+            {
+              "id": "comparable-vs-comparator",
+              "title": "What are the differences between Comparable and Comparator interfaces, and when would you use each?",
+              "filePath": "spaces/java/collections/comparable-vs-comparator.json"
+            },
+            {
+              "id": "fail-fast-in-collections",
+              "title": "What does the term 'fail-fast' mean in the context of the Java Collections Framework?",
+              "filePath": "spaces/java/collections/fail-fast-in-collections.json"
+            },
+            {
+              "id": "thread-safe-collections",
+              "title": "How do you make a collection thread-safe, and what are the advantages and disadvantages of using synchronized collections?",
+              "filePath": "spaces/java/collections/thread-safe-collections.json"
+            },
+            {
+              "id": "concurrenthashmap-vs-synchronizedmap",
+              "title": "What is the difference between ConcurrentHashMap and Collections.synchronizedMap()? When would you use each?",
+              "filePath": "spaces/java/collections/concurrenthashmap-vs-synchronizedmap.json"
+            },
+            {
+              "id": "hash-collisions-in-hashmap",
+              "title": "How are hash collisions handled in a HashMap?",
+              "filePath": "spaces/java/collections/hash-collisions-in-hashmap.json"
+            },
+            {
+              "id": "weak-references-and-weakhashmap",
+              "title": "What are weak references, and how does WeakHashMap differ from HashMap in terms of garbage collection?",
+              "filePath": "spaces/java/collections/weak-references-and-weakhashmap.json"
+            },
+            {
+              "id": "custom-collection-class-design",
+              "title": "How would you design and implement a custom collection class that integrates with the Java Collections Framework?",
+              "filePath": "spaces/java/collections/custom-collection-class-design.json"
+            }
+          ]
         }
       ]
     }
