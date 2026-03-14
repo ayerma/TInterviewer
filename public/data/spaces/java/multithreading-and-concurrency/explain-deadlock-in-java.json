@@ -1,0 +1,10 @@
+{
+  "id": "explain-deadlock-in-java",
+  "title": "Explain deadlock in Java. How can it be prevented?",
+  "answers": {
+    "junior": "Deadlock is when two or more threads wait forever for each other to release resources.",
+    "middle": "Deadlock occurs when threads hold resources and wait for others, causing a standstill. Prevent by avoiding nested locks and using lock ordering.",
+    "senior": "Deadlock is a cyclic dependency of locks. Prevent by acquiring locks in a consistent order, using tryLock(), and minimizing lock scope. Analyze with thread dumps.",
+    "tricky": "Use java.util.concurrent tools to avoid deadlocks. Apply lock timeouts, avoid unnecessary synchronization, and design for lock-free concurrency. Monitor and analyze thread states in production."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "what-is-the-purpose-of-runnable-interface-vs-extending-thread",
+  "title": "What is the purpose of the Runnable interface and how does it compare to extending the Thread class?",
+  "answers": {
+    "junior": "Runnable lets you define what a thread does. Extending Thread combines thread logic and management.",
+    "middle": "Runnable separates task logic from thread management. Extending Thread ties both together. Runnable is preferred for flexibility and reuse.",
+    "senior": "Runnable enables composition and allows a class to extend other classes. Extending Thread limits flexibility. Use Runnable for scalable, maintainable code and thread pools.",
+    "tricky": "Runnable is best for separation of concerns and reusability. Extending Thread is less flexible due to single inheritance. Use Callable for tasks returning values. Prefer thread pools and executors for production code."
+  }
+}

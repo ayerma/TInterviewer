@@ -1,0 +1,10 @@
+{
+  "id": "explain-synchronized-blocks-vs-methods",
+  "title": "Explain synchronized blocks vs synchronized methods in Java.",
+  "answers": {
+    "junior": "Synchronized methods lock the whole method. Synchronized blocks lock only part of the code.",
+    "middle": "Synchronized blocks allow finer control, locking only critical sections. Methods lock the entire method, which can reduce performance.",
+    "senior": "Use synchronized blocks for granular locking and better performance. Methods are easier but less flexible. Always lock the smallest scope needed to avoid contention.",
+    "tricky": "Prefer synchronized blocks for complex logic. Analyze lock scope and contention. Use java.util.concurrent locks for advanced scenarios. Avoid locking on 'this' in public methods to prevent external interference."
+  }
+}

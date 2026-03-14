@@ -1,0 +1,10 @@
+{
+  "id": "what-is-synchronization-in-java",
+  "title": "What is synchronization in Java and why is it important?",
+  "answers": {
+    "junior": "Synchronization prevents multiple threads from accessing shared data at the same time.",
+    "middle": "It ensures thread safety by locking resources, preventing race conditions. Use synchronized keyword or blocks.",
+    "senior": "Synchronization coordinates thread access to shared resources, avoiding data corruption. Use synchronized methods, blocks, or java.util.concurrent locks. Overuse can cause deadlocks and performance issues.",
+    "tricky": "Balance synchronization for safety and performance. Use fine-grained locks, java.util.concurrent tools, and avoid deadlocks. Analyze lock contention and prefer immutable objects when possible."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "difference-between-callable-and-runnable",
+  "title": "What is the difference between Callable and Runnable interfaces?",
+  "answers": {
+    "junior": "Runnable does not return a result. Callable returns a result and can throw exceptions.",
+    "middle": "Runnable's run() returns void. Callable's call() returns a value and can throw checked exceptions. Use Callable for tasks needing results.",
+    "senior": "Callable is used with ExecutorService for tasks that return values. Future objects hold results. Runnable is for simple tasks. Callable enables exception handling and result retrieval.",
+    "tricky": "Use Callable for asynchronous computation. Combine with Future and ExecutorService. Prefer Callable for complex tasks needing results or error handling. Analyze thread pool usage and task lifecycle."
+  }
+}

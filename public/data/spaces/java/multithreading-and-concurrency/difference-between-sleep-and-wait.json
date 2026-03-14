@@ -1,0 +1,10 @@
+{
+  "id": "difference-between-sleep-and-wait",
+  "title": "What is the difference between sleep() and wait() in Java?",
+  "answers": {
+    "junior": "sleep() pauses a thread for a set time. wait() makes a thread wait until notified.",
+    "middle": "sleep() is for timing, does not release locks. wait() is for synchronization, releases the lock and waits for notify().",
+    "senior": "sleep() is static, used for delays, does not require synchronization. wait() is instance, used in synchronized blocks, releases monitor and waits for notify/notifyAll. Incorrect use of wait() outside sync causes errors.",
+    "tricky": "Use wait() for inter-thread communication, sleep() for timing. Avoid using sleep() for synchronization. Handle InterruptedException properly. Producer-consumer patterns rely on wait/notify."
+  }
+}

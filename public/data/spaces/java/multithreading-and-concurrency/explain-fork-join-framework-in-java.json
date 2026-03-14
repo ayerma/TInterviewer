@@ -1,0 +1,10 @@
+{
+  "id": "explain-fork-join-framework-in-java",
+  "title": "Explain the Fork/Join framework in Java. When should it be used?",
+  "answers": {
+    "junior": "Fork/Join framework helps split tasks into smaller parts and run them in parallel.",
+    "middle": "Fork/Join is for parallelism. It splits tasks into subtasks, processes them concurrently, and combines results. Use for CPU-intensive tasks.",
+    "senior": "Fork/Join uses work-stealing for efficient parallelism. Use RecursiveTask and RecursiveAction for splitting tasks. Prefer for divide-and-conquer algorithms.",
+    "tricky": "Fork/Join is ideal for recursive, parallel computation. Analyze task granularity and thread pool sizing. Monitor for contention and overhead. Prefer for large, CPU-bound workloads."
+  }
+}

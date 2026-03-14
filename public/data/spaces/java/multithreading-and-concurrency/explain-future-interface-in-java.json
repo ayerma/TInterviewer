@@ -1,0 +1,10 @@
+{
+  "id": "explain-future-interface-in-java",
+  "title": "Explain the Future interface in Java. How is it used?",
+  "answers": {
+    "junior": "Future represents the result of an asynchronous computation. You can check if it's done and get the result.",
+    "middle": "Future lets you submit tasks to ExecutorService and retrieve results later. Use get() to block until done, isDone() to check status.",
+    "senior": "Future enables asynchronous programming. Use get(), cancel(), isDone(), isCancelled(). Combine with Callable for result retrieval. Handle InterruptedException and ExecutionException.",
+    "tricky": "Use Future for async task management. Prefer CompletableFuture for advanced workflows. Analyze blocking, cancellation, and exception handling. Monitor thread pool health and task completion."
+  }
+}

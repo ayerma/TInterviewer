@@ -1,0 +1,10 @@
+{
+  "id": "explain-locks-in-java",
+  "title": "Explain locks in Java. How do they differ from synchronized blocks?",
+  "answers": {
+    "junior": "Locks control access to shared resources. Synchronized blocks use implicit locking.",
+    "middle": "Locks (e.g., ReentrantLock) provide explicit control. Synchronized blocks use implicit monitor locks. Locks offer more features like tryLock().",
+    "senior": "Locks allow flexible locking, timeout, and interruptible acquisition. Prefer locks for complex scenarios. Synchronized blocks are simpler but less flexible.",
+    "tricky": "Use locks for advanced concurrency. Analyze lock scope, fairness, and deadlock risk. Prefer java.util.concurrent locks for production systems. Combine with condition variables for signaling."
+  }
+}

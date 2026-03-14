@@ -1,0 +1,10 @@
+{
+  "id": "what-is-volatility-in-java",
+  "title": "What is volatility in Java? How does the volatile keyword work?",
+  "answers": {
+    "junior": "volatile makes a variable visible to all threads. Changes are always seen immediately.",
+    "middle": "volatile ensures updates to a variable are visible to other threads. It prevents caching and guarantees read/write visibility.",
+    "senior": "volatile provides visibility, not atomicity. Use for simple flags. For compound actions, use synchronized or java.util.concurrent. Volatile variables are not locked, so race conditions can occur.",
+    "tricky": "Volatile is for visibility, not synchronization. Use Atomic classes for atomic operations. Analyze memory consistency effects. Prefer higher-level concurrency tools for complex scenarios."
+  }
+}

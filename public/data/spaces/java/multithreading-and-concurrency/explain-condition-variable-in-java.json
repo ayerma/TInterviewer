@@ -1,0 +1,10 @@
+{
+  "id": "explain-condition-variable-in-java",
+  "title": "Explain condition variables in Java. How are they used?",
+  "answers": {
+    "junior": "Condition variables let threads wait for certain conditions before continuing.",
+    "middle": "Condition variables are used with locks to signal threads. Use await(), signal(), and signalAll() methods.",
+    "senior": "Condition variables enable fine-grained thread coordination. Use with ReentrantLock for advanced signaling. Prefer over wait/notify for complex scenarios.",
+    "tricky": "Use condition variables for producer-consumer and complex coordination. Analyze signaling, spurious wakeups, and lock scope. Prefer java.util.concurrent for robust design."
+  }
+}

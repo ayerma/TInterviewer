@@ -170,6 +170,32 @@
           ]
         },
         {
+          "id": "multithreading-and-concurrency",
+          "name": "Multithreading and Concurrency",
+          "description": "Java multithreading concepts, concurrency mechanisms, thread safety, and synchronization techniques.",
+          "questions": [
+            { "id": "what-is-the-difference-between-a-process-and-a-thread-in-java", "title": "What is the difference between a process and a thread in Java?", "filePath": "spaces/java/multithreading-and-concurrency/what-is-the-difference-between-a-process-and-a-thread-in-java.json" },
+            { "id": "how-do-you-create-and-start-a-thread-in-java", "title": "How do you create and start a thread in Java?", "filePath": "spaces/java/multithreading-and-concurrency/how-do-you-create-and-start-a-thread-in-java.json" },
+            { "id": "what-is-the-purpose-of-runnable-interface-vs-extending-thread", "title": "What is the purpose of the Runnable interface and how does it compare to extending the Thread class?", "filePath": "spaces/java/multithreading-and-concurrency/what-is-the-purpose-of-runnable-interface-vs-extending-thread.json" },
+            { "id": "common-methods-of-thread-class", "title": "What are some common methods provided by the Thread class?", "filePath": "spaces/java/multithreading-and-concurrency/common-methods-of-thread-class.json" },
+            { "id": "difference-between-sleep-and-wait", "title": "What is the difference between sleep() and wait() in Java?", "filePath": "spaces/java/multithreading-and-concurrency/difference-between-sleep-and-wait.json" },
+            { "id": "what-is-synchronization-in-java", "title": "What is synchronization in Java and why is it important?", "filePath": "spaces/java/multithreading-and-concurrency/what-is-synchronization-in-java.json" },
+            { "id": "explain-deadlock-in-java", "title": "Explain deadlock in Java. How can it be prevented?", "filePath": "spaces/java/multithreading-and-concurrency/explain-deadlock-in-java.json" },
+            { "id": "what-is-volatility-in-java", "title": "What is volatility in Java? How does the volatile keyword work?", "filePath": "spaces/java/multithreading-and-concurrency/what-is-volatility-in-java.json" },
+            { "id": "difference-between-callable-and-runnable", "title": "What is the difference between Callable and Runnable interfaces?", "filePath": "spaces/java/multithreading-and-concurrency/difference-between-callable-and-runnable.json" },
+            { "id": "explain-executor-framework-in-java", "title": "Explain the Executor framework in Java. Why is it preferred over manually creating threads?", "filePath": "spaces/java/multithreading-and-concurrency/explain-executor-framework-in-java.json" },
+            { "id": "explain-future-interface-in-java", "title": "Explain the Future interface in Java. How is it used?", "filePath": "spaces/java/multithreading-and-concurrency/explain-future-interface-in-java.json" },
+            { "id": "explain-synchronized-blocks-vs-methods", "title": "Explain synchronized blocks vs synchronized methods in Java.", "filePath": "spaces/java/multithreading-and-concurrency/explain-synchronized-blocks-vs-methods.json" },
+            { "id": "explain-thread-safety-in-java", "title": "Explain thread safety in Java. How can you ensure it?", "filePath": "spaces/java/multithreading-and-concurrency/explain-thread-safety-in-java.json" },
+            { "id": "explain-concurrent-collections-in-java", "title": "Explain concurrent collections in Java. Why are they important?", "filePath": "spaces/java/multithreading-and-concurrency/explain-concurrent-collections-in-java.json" },
+            { "id": "explain-atomic-classes-in-java", "title": "Explain atomic classes in Java. When should you use them?", "filePath": "spaces/java/multithreading-and-concurrency/explain-atomic-classes-in-java.json" },
+            { "id": "explain-locks-in-java", "title": "Explain locks in Java. How do they differ from synchronized blocks?", "filePath": "spaces/java/multithreading-and-concurrency/explain-locks-in-java.json" },
+            { "id": "explain-condition-variable-in-java", "title": "Explain condition variables in Java. How are they used?", "filePath": "spaces/java/multithreading-and-concurrency/explain-condition-variable-in-java.json" },
+            { "id": "explain-fork-join-framework-in-java", "title": "Explain the Fork/Join framework in Java. When should it be used?", "filePath": "spaces/java/multithreading-and-concurrency/explain-fork-join-framework-in-java.json" },
+            { "id": "explain-completablefuture-in-java", "title": "Explain CompletableFuture in Java. How does it improve asynchronous programming?", "filePath": "spaces/java/multithreading-and-concurrency/explain-completablefuture-in-java.json" }
+          ]
+        },
+        {
           "id": "java-modern-features",
           "name": "Java 8+ Modern Features",
           "description": "In-depth coverage of Java 8 and modern language features introduced in Java 8-17",

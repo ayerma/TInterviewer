@@ -1,0 +1,10 @@
+{
+  "id": "explain-executor-framework-in-java",
+  "title": "Explain the Executor framework in Java. Why is it preferred over manually creating threads?",
+  "answers": {
+    "junior": "Executor framework manages thread creation and execution. It is easier and safer than manual threads.",
+    "middle": "Executor framework provides thread pools, task scheduling, and resource management. It improves scalability and reliability.",
+    "senior": "Executor framework decouples task submission from execution. It manages thread lifecycle, pooling, and reuse. Use ExecutorService for robust concurrency. Manual threads are error-prone and hard to scale.",
+    "tricky": "Executor framework supports advanced features: scheduled tasks, custom thread pools, and rejection policies. Prefer Executors for production systems. Analyze thread pool sizing and task queueing for optimal performance."
+  }
+}
