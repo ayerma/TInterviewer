@@ -1,0 +1,10 @@
+{
+  "id": "scopes-of-spring-beans-and-use-cases",
+  "title": "What are the different scopes available for Spring Beans and their use cases?",
+  "answers": {
+    "junior": "Bean scope decides how long a bean lives. Common scopes are singleton (one instance), prototype (new instance each time), request, and session.",
+    "middle": "Singleton beans are default and shared. Prototype beans are created each time. Request and session scopes are for web apps. Choose scope based on thread safety and usage.",
+    "senior": "Singleton beans are efficient but must be thread-safe. Prototype beans require manual dependency management. Request/session/application scopes are for web contexts. Always consider lifecycle and memory when choosing scope.",
+    "tricky": "Singleton beans are eagerly initialized and shared. Prototype beans are lazy and require manual cleanup. Web scopes (request, session, application, websocket) are for specific contexts. Misusing scope can cause memory leaks or thread issues."
+  }
+}

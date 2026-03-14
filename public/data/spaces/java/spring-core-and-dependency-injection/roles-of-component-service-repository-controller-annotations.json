@@ -1,0 +1,10 @@
+{
+  "id": "roles-of-component-service-repository-controller-annotations",
+  "title": "Explain the roles of @Component, @Service, @Repository, and @Controller annotations in Spring.",
+  "answers": {
+    "junior": "These annotations mark classes for Spring to manage. @Component is general, @Service is for business logic, @Repository is for data access, and @Controller is for web endpoints.",
+    "middle": "@Component marks any bean, @Service is for business logic, @Repository handles data and exception translation, @Controller manages web requests. Using specific annotations clarifies intent and enables features like AOP.",
+    "senior": "@Component is generic, @Service is for business logic and AOP, @Repository adds exception translation for persistence, @Controller maps HTTP requests. Using stereotypes improves clarity and maintainability. All are detected via component scanning.",
+    "tricky": "@Repository enables exception translation for database errors. @Service allows AOP features. @Controller integrates with Spring MVC. All annotations result in bean registration, but their roles affect behavior and integration. Proper use supports separation of concerns and advanced Spring features."
+  }
+}

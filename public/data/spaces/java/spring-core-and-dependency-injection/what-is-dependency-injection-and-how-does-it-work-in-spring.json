@@ -1,0 +1,10 @@
+{
+  "id": "what-is-dependency-injection-and-how-does-it-work-in-spring",
+  "title": "What is Dependency Injection (DI) and how does it work in Spring?",
+  "answers": {
+    "junior": "Dependency Injection means giving an object its needed parts from outside, not creating them itself. Spring uses DI to manage objects and their relationships automatically.",
+    "middle": "Spring supports DI through constructor, setter, and field injection. The IoC container creates beans and injects dependencies using annotations like @Autowired. Constructor injection is preferred for clarity and immutability.",
+    "senior": "Spring’s DI enables modular design and testability. The container resolves dependencies at runtime, supports profiles and qualifiers, and allows mocks for testing. Constructor injection avoids circular dependencies and is best practice.",
+    "tricky": "Spring resolves dependencies using bean scanning and context configuration. Circular dependencies are handled via setter/field injection, not constructor. Advanced DI features include custom scopes, profiles, and runtime bean resolution. Improper scope or circular design can cause runtime errors."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "significance-of-applicationcontext-in-spring",
+  "title": "What is the significance of the ApplicationContext in Spring?",
+  "answers": {
+    "junior": "ApplicationContext is the main place where Spring manages beans and their dependencies.",
+    "middle": "ApplicationContext extends BeanFactory, providing dependency injection, lifecycle management, and advanced features like event handling and profiles. It is used to access beans and manage their lifecycles.",
+    "senior": "ApplicationContext manages beans, supports AOP, transaction management, and integrates with security and resource loading. It is initialized via AnnotationConfigApplicationContext or SpringApplication.run in Boot.",
+    "tricky": "ApplicationContext eagerly initializes singleton beans, supports event propagation, and integrates with advanced Spring features. Misconfiguring bean scopes or relying on BeanFactory can cause subtle bugs. Always use ApplicationContext for modern Spring apps."
+  }
+}

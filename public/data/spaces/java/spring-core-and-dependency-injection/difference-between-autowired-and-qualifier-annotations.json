@@ -1,0 +1,10 @@
+{
+  "id": "difference-between-autowired-and-qualifier-annotations",
+  "title": "What is the difference between @Autowired and @Qualifier annotations?",
+  "answers": {
+    "junior": "@Autowired injects a bean by type. @Qualifier helps choose which bean to inject when there are multiple beans of the same type.",
+    "middle": "@Autowired is for automatic injection. @Qualifier specifies the exact bean to inject by name. Use @Qualifier with @Autowired when multiple beans exist.",
+    "senior": "@Autowired resolves dependencies by type. @Qualifier resolves ambiguity by specifying the bean name. Constructor injection with @Qualifier is best for clarity. Unique bean names are important for maintainability.",
+    "tricky": "@Qualifier prevents runtime errors from ambiguous dependencies. Use meaningful bean names. Constructor injection with @Qualifier improves testability and reliability. Avoid field injection for maintainability."
+  }
+}

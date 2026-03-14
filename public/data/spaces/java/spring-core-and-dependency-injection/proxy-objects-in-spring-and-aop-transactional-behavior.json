@@ -1,0 +1,10 @@
+{
+  "id": "proxy-objects-in-spring-and-aop-transactional-behavior",
+  "title": "What are proxy objects in Spring, and how do they enable features like AOP and transactional behavior?",
+  "answers": {
+    "junior": "Proxy objects wrap beans to add extra features like logging or transactions without changing the bean code.",
+    "middle": "Spring uses proxies to intercept method calls for AOP and transaction management. JDK proxies require interfaces, CGLIB proxies subclass classes. Proxies enable cross-cutting concerns.",
+    "senior": "Proxies are used for AOP, security, and caching. Direct method calls within the same bean bypass proxies. Choose interfaces for flexibility, CGLIB for concrete classes. Understanding proxy mechanics is key for reliable design.",
+    "tricky": "Spring creates proxies using JDK or CGLIB. AOP advice is applied via proxies. Direct calls within beans bypass proxies, so cross-cutting concerns may not apply. Proxy choice affects performance and compatibility."
+  }
+}

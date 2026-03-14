@@ -1,0 +1,10 @@
+{
+  "id": "defining-and-configuring-spring-beans",
+  "title": "How do you define a Spring Bean, and what are the different ways to configure a Bean?",
+  "answers": {
+    "junior": "A Spring Bean is an object managed by Spring. You can define beans using XML, annotations, or Java configuration.",
+    "middle": "Beans are defined with @Component, @Service, @Repository, or @Controller. Dependencies are injected with @Autowired. Java configuration uses @Configuration and @Bean methods. XML is legacy.",
+    "senior": "Beans can be configured with scopes, lifecycle callbacks, and custom init/destroy methods. Annotation-based and Java-based configurations are preferred for clarity and maintainability.",
+    "tricky": "Beans can be further customized with @Scope, @PostConstruct, @PreDestroy, and custom initialization. Forgetting to scan packages or misconfiguring scopes can cause unexpected behavior."
+  }
+}

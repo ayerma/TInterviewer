@@ -1,0 +1,10 @@
+{
+  "id": "types-of-dependency-injection-supported-by-spring",
+  "title": "What are the different types of Dependency Injection supported by Spring?",
+  "answers": {
+    "junior": "Spring supports constructor, setter, and field injection. Constructor injection is best for required parts, setter for optional, and field is less recommended.",
+    "middle": "Constructor injection is preferred for mandatory dependencies and immutability. Setter injection allows optional dependencies. Field injection uses @Autowired on fields but is discouraged for testability.",
+    "senior": "Constructor injection is best practice for modern Spring, enabling clear contracts and easy testing. Setter injection is for optional dependencies. Field injection complicates testing and maintainability. XML-based injection is legacy.",
+    "tricky": "Constructor injection avoids circular dependencies and supports immutable beans. Setter/field injection can resolve circular references. Annotation-based injection (@Autowired, @Value) is standard; XML is legacy. Always prefer constructor injection for clarity and reliability."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "lifecycle-of-spring-bean-and-role-of-post-processors",
+  "title": "Explain the lifecycle of a Spring Bean and the role of post-processors.",
+  "answers": {
+    "junior": "Spring creates beans, sets their dependencies, and cleans them up when done. Post-processors can change beans after creation.",
+    "middle": "Bean lifecycle: instantiation, dependency injection, initialization, destruction. Post-processors modify beans before/after initialization, enabling features like AOP and custom logic.",
+    "senior": "BeanPostProcessor allows modification of beans before/after initialization. Used for proxy creation, custom logic, and infrastructure features. Multiple post-processors may interact; order matters.",
+    "tricky": "Bean lifecycle callbacks include InitializingBean, DisposableBean, @PostConstruct, @PreDestroy. Post-processors are key for AOP, security, and advanced customization. Improper use can cause subtle bugs or proxy issues."
+  }
+}

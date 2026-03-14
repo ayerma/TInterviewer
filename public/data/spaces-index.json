@@ -277,7 +277,29 @@
             }
           ]
         }
-      ]
-    }
-  ]
-}
+      ,
+      {
+        "id": "spring-core-and-dependency-injection",
+        "name": "Spring Core and Dependency Injection",
+        "description": "Core concepts of the Spring Framework and Dependency Injection in Java applications.",
+        "questions": [
+          { "id": "what-is-the-spring-framework-and-what-are-its-core-features", "title": "What is the Spring Framework, and what are its core features?", "filePath": "spaces/java/spring-core-and-dependency-injection/what-is-the-spring-framework-and-what-are-its-core-features.json" },
+          { "id": "what-is-dependency-injection-and-how-does-it-work-in-spring", "title": "What is Dependency Injection (DI) and how does it work in Spring?", "filePath": "spaces/java/spring-core-and-dependency-injection/what-is-dependency-injection-and-how-does-it-work-in-spring.json" },
+          { "id": "types-of-dependency-injection-supported-by-spring", "title": "What are the different types of Dependency Injection supported by Spring?", "filePath": "spaces/java/spring-core-and-dependency-injection/types-of-dependency-injection-supported-by-spring.json" },
+          { "id": "roles-of-component-service-repository-controller-annotations", "title": "Explain the roles of @Component, @Service, @Repository, and @Controller annotations in Spring.", "filePath": "spaces/java/spring-core-and-dependency-injection/roles-of-component-service-repository-controller-annotations.json" },
+          { "id": "significance-of-applicationcontext-in-spring", "title": "What is the significance of the ApplicationContext in Spring?", "filePath": "spaces/java/spring-core-and-dependency-injection/significance-of-applicationcontext-in-spring.json" },
+          { "id": "how-autowired-annotation-works-for-dependency-injection", "title": "How does the @Autowired annotation work, and how is it used for dependency injection?", "filePath": "spaces/java/spring-core-and-dependency-injection/how-autowired-annotation-works-for-dependency-injection.json" },
+          { "id": "difference-between-autowired-and-qualifier-annotations", "title": "What is the difference between @Autowired and @Qualifier annotations?", "filePath": "spaces/java/spring-core-and-dependency-injection/difference-between-autowired-and-qualifier-annotations.json" },
+          { "id": "difference-between-beanfactory-and-applicationcontext-in-spring", "title": "What is the difference between BeanFactory and ApplicationContext in Spring?", "filePath": "spaces/java/spring-core-and-dependency-injection/difference-between-beanfactory-and-applicationcontext-in-spring.json" },
+          { "id": "defining-and-configuring-spring-beans", "title": "How do you define a Spring Bean, and what are the different ways to configure a Bean?", "filePath": "spaces/java/spring-core-and-dependency-injection/defining-and-configuring-spring-beans.json" },
+          { "id": "scopes-of-spring-beans-and-use-cases", "title": "What are the different scopes available for Spring Beans and their use cases?", "filePath": "spaces/java/spring-core-and-dependency-injection/scopes-of-spring-beans-and-use-cases.json" },
+          { "id": "lifecycle-of-spring-bean-and-role-of-post-processors", "title": "Explain the lifecycle of a Spring Bean and the role of post-processors.", "filePath": "spaces/java/spring-core-and-dependency-injection/lifecycle-of-spring-bean-and-role-of-post-processors.json" },
+          { "id": "purpose-of-configuration-and-bean-annotations-in-spring", "title": "What is the purpose of @Configuration and @Bean annotations in Spring?", "filePath": "spaces/java/spring-core-and-dependency-injection/purpose-of-configuration-and-bean-annotations-in-spring.json" },
+          { "id": "managing-circular-dependencies-in-spring-di", "title": "How does Spring manage circular dependencies in Dependency Injection, and how would you resolve them?", "filePath": "spaces/java/spring-core-and-dependency-injection/managing-circular-dependencies-in-spring-di.json" },
+          { "id": "proxy-objects-in-spring-and-aop-transactional-behavior", "title": "What are proxy objects in Spring, and how do they enable features like AOP and transactional behavior?", "filePath": "spaces/java/spring-core-and-dependency-injection/proxy-objects-in-spring-and-aop-transactional-behavior.json" },
+          { "id": "custom-dependency-injection-in-spring-complex-scenarios", "title": "How would you implement custom dependency injection in Spring for a complex scenario that the framework doesn't directly support?", "filePath": "spaces/java/spring-core-and-dependency-injection/custom-dependency-injection-in-spring-complex-scenarios.json" }
+        ]
+      }
+    ]
+  }
+]
