@@ -1,0 +1,10 @@
+{
+  "id": "how-autowired-annotation-works-for-dependency-injection",
+  "title": "How does the @Autowired annotation work, and how is it used for dependency injection?",
+  "answers": {
+    "junior": "@Autowired tells Spring to automatically provide the needed object for a field, constructor, or setter.",
+    "middle": "@Autowired injects dependencies by type. Use it on fields, constructors, or setters. Constructor injection is preferred for clarity and testability. Use @Qualifier if multiple beans exist.",
+    "senior": "@Autowired works with component scanning to inject beans. Constructor injection is best for mandatory dependencies. If no bean is found, Spring throws an error unless required=false is set. Avoid field injection for testability.",
+    "tricky": "@Autowired uses reflection to resolve dependencies. Ambiguity is handled with @Qualifier. Field injection complicates encapsulation and testing. Component scanning discovers beans, and Spring injects them at runtime."
+  }
+}

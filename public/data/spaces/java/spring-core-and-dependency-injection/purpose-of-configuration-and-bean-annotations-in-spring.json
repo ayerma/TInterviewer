@@ -1,0 +1,10 @@
+{
+  "id": "purpose-of-configuration-and-bean-annotations-in-spring",
+  "title": "What is the purpose of @Configuration and @Bean annotations in Spring?",
+  "answers": {
+    "junior": "@Configuration marks a class for Spring to use as a source of bean definitions. @Bean defines a method that returns a bean.",
+    "middle": "@Configuration classes group bean definitions. @Bean methods create and configure beans. Use them for complex setup or third-party integration.",
+    "senior": "@Configuration enables Java-based configuration. @Bean methods allow custom bean creation logic. Use for integrating libraries or advanced setup. Annotation-based config is preferred for maintainability.",
+    "tricky": "@Configuration classes are processed by Spring to register beans. @Bean methods can use parameters for dependency injection. Misconfiguring @Bean methods or forgetting @Configuration can cause missing beans or errors."
+  }
+}

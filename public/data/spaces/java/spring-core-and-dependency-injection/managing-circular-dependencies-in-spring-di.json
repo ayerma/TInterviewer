@@ -1,0 +1,10 @@
+{
+  "id": "managing-circular-dependencies-in-spring-di",
+  "title": "How does Spring manage circular dependencies in Dependency Injection, and how would you resolve them?",
+  "answers": {
+    "junior": "Spring can handle circular dependencies for some beans, but it’s best to avoid them. Use setter injection if needed.",
+    "middle": "Spring resolves circular dependencies for singleton beans using setter or field injection. Constructor injection fails for circular dependencies. Refactor design to avoid cycles.",
+    "senior": "Spring exposes early references for singleton beans to resolve circular dependencies. Setter/field injection works, constructor injection fails. Refactor by extracting shared logic into a third bean.",
+    "tricky": "Circular dependencies are resolved via early references and proxies. Constructor injection causes BeanCurrentlyInCreationException. Refactor design or use setter injection. Document and test for maintainability."
+  }
+}

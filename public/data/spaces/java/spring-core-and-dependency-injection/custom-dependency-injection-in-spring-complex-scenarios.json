@@ -1,0 +1,10 @@
+{
+  "id": "custom-dependency-injection-in-spring-complex-scenarios",
+  "title": "How would you implement custom dependency injection in Spring for a complex scenario that the framework doesn't directly support?",
+  "answers": {
+    "junior": "You can use advanced Spring features to inject dependencies in special cases, like BeanPostProcessor or custom annotations.",
+    "middle": "BeanPostProcessor lets you modify beans during creation. Custom annotations and ApplicationContextAware allow manual injection. Use for legacy systems or complex graphs.",
+    "senior": "Custom DI uses BeanPostProcessor, reflection, and programmatic bean registration. Ensure thread safety and avoid circular dependencies. Document custom logic and test thoroughly.",
+    "tricky": "Custom DI is for integrating legacy systems or runtime-generated beans. Use BeanPostProcessor, ApplicationContextAware, and GenericApplicationContext. Validate with integration tests and document for maintainability."
+  }
+}

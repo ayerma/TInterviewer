@@ -1,0 +1,10 @@
+{
+  "id": "what-is-the-spring-framework-and-what-are-its-core-features",
+  "title": "What is the Spring Framework, and what are its core features?",
+  "answers": {
+    "junior": "Spring is a framework for building Java applications. It helps manage objects and their dependencies, making code easier to test and maintain. Its main features are dependency injection, modularity, and support for web and data access.",
+    "middle": "Spring provides an IoC container for dependency injection, AOP for cross-cutting concerns, and modules for web, data, and transaction management. It uses annotations like @Component and @Autowired to wire beans. Spring Boot simplifies setup and deployment.",
+    "senior": "Spring’s IoC container manages bean lifecycles and dependencies, enabling loose coupling and testability. AOP allows modular handling of logging, security, and transactions. Spring integrates with JDBC, JPA, and offers MVC for web apps. Modular adoption and ecosystem support are key strengths.",
+    "tricky": "Spring’s IoC container uses reflection and proxies for bean management. AOP leverages JDK/CGLIB proxies for method interception. Bean lifecycle management, autowiring pitfalls, and integration with Boot, Security, and Data modules require careful design. Overuse of autowiring can obscure dependencies and complicate debugging."
+  }
+}

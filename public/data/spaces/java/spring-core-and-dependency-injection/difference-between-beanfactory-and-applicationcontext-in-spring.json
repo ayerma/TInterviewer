@@ -1,0 +1,10 @@
+{
+  "id": "difference-between-beanfactory-and-applicationcontext-in-spring",
+  "title": "What is the difference between BeanFactory and ApplicationContext in Spring?",
+  "answers": {
+    "junior": "BeanFactory is a basic container for managing beans. ApplicationContext is more advanced and provides extra features like events and internationalization.",
+    "middle": "BeanFactory manages beans and dependencies. ApplicationContext adds features like event handling, resource loading, and eager bean initialization. Use ApplicationContext for most applications.",
+    "senior": "ApplicationContext extends BeanFactory, offering AOP, transaction management, and integration with Spring Boot. BeanFactory is for lightweight or legacy cases. ApplicationContext is preferred for modern apps.",
+    "tricky": "ApplicationContext eagerly initializes singleton beans and supports advanced features. BeanFactory is lazy and lacks event handling. Using BeanFactory can miss out on automatic wiring and cause subtle bugs."
+  }
+}
