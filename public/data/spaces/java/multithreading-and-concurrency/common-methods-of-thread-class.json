@@ -1,0 +1,10 @@
+{
+  "id": "common-methods-of-thread-class",
+  "title": "What are some common methods provided by the Thread class?",
+  "answers": {
+    "junior": "Common methods: start(), run(), join(), sleep(), interrupt().",
+    "middle": "start() begins execution, run() contains logic, join() waits for completion, sleep() pauses, interrupt() signals stop. Also setPriority() and setDaemon().",
+    "senior": "Thread class offers methods for control: start(), run(), join(), sleep(), interrupt(), setPriority(), setDaemon(). Avoid deprecated methods like stop(), suspend(), resume(). Handle InterruptedException properly.",
+    "tricky": "Use higher-level concurrency utilities for robust thread management. Deprecated methods can cause inconsistent states. Always handle exceptions and monitor thread health in production systems."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "explain-thread-safety-in-java",
+  "title": "Explain thread safety in Java. How can you ensure it?",
+  "answers": {
+    "junior": "Thread safety means code works correctly when accessed by multiple threads. Use synchronization to ensure it.",
+    "middle": "Thread safety is achieved by controlling access to shared data. Use synchronized, locks, or atomic classes.",
+    "senior": "Ensure thread safety with proper synchronization, immutable objects, and java.util.concurrent tools. Avoid race conditions and deadlocks. Analyze code for shared state.",
+    "tricky": "Use lock-free algorithms, atomic classes, and concurrent collections. Prefer immutability and stateless design. Analyze thread interactions and test for concurrency issues."
+  }
+}

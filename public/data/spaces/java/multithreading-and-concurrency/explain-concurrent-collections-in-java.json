@@ -1,0 +1,10 @@
+{
+  "id": "explain-concurrent-collections-in-java",
+  "title": "Explain concurrent collections in Java. Why are they important?",
+  "answers": {
+    "junior": "Concurrent collections are thread-safe versions of collections like List and Map.",
+    "middle": "They allow safe access by multiple threads. Examples: ConcurrentHashMap, CopyOnWriteArrayList. Prevents data corruption.",
+    "senior": "Concurrent collections use internal locking or lock-free algorithms for thread safety and performance. Prefer them over synchronized collections for scalability.",
+    "tricky": "Use concurrent collections for high-performance multithreading. Analyze lock granularity and contention. Prefer lock-free designs for scalability. Monitor for subtle concurrency bugs."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "explain-atomic-classes-in-java",
+  "title": "Explain atomic classes in Java. When should you use them?",
+  "answers": {
+    "junior": "Atomic classes provide thread-safe operations for variables like int and boolean.",
+    "middle": "Atomic classes (e.g., AtomicInteger) allow lock-free, thread-safe updates. Use them for counters and flags.",
+    "senior": "Atomic classes use CAS (compare-and-swap) for efficient concurrency. Prefer them for simple shared state. For complex logic, use locks or concurrent collections.",
+    "tricky": "Use atomic classes for lock-free concurrency. Analyze performance and contention. Prefer atomic operations for scalability. Combine with other concurrency tools for robust design."
+  }
+}

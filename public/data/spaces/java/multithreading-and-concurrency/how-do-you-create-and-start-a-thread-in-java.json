@@ -1,0 +1,10 @@
+{
+  "id": "how-do-you-create-and-start-a-thread-in-java",
+  "title": "How do you create and start a thread in Java?",
+  "answers": {
+    "junior": "You can create a thread by extending the Thread class or implementing Runnable. Start it with thread.start().",
+    "middle": "Implement Runnable, override run(), then create a Thread with your Runnable and call start(). You can also use Executors for thread pools.",
+    "senior": "Prefer implementing Runnable for separation of logic and management. Use ExecutorService for scalable thread management. Always use thread.start(), not thread.run(). Handle exceptions and shared state carefully.",
+    "tricky": "Use ExecutorService for thread pooling and resource management. Avoid extending Thread unless needed. Use lambda expressions for Runnable. Ensure thread safety and proper shutdown. Modern Java uses java.util.concurrent utilities for robust multithreading."
+  }
+}

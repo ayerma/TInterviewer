@@ -1,0 +1,10 @@
+{
+  "id": "what-is-the-difference-between-a-process-and-a-thread-in-java",
+  "title": "What is the difference between a process and a thread in Java?",
+  "answers": {
+    "junior": "A process is a running program with its own memory. A thread is a smaller unit inside a process that shares memory with other threads.",
+    "middle": "A process is independent and has its own resources. Threads are lightweight, share memory, and run inside a process. Threads allow parallel tasks within a program.",
+    "senior": "Processes are isolated, each with its own address space. Threads share memory and resources within a process, enabling concurrency. Threads are managed by the JVM and require careful synchronization to avoid issues like race conditions.",
+    "tricky": "Threads are efficient for concurrency but require synchronization to avoid deadlocks and race conditions. Processes are used for isolation and fault tolerance. Inter-process communication is complex, while threads share memory but must be managed for thread safety."
+  }
+}

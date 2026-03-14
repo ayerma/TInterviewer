@@ -1,0 +1,10 @@
+{
+  "id": "explain-completablefuture-in-java",
+  "title": "Explain CompletableFuture in Java. How does it improve asynchronous programming?",
+  "answers": {
+    "junior": "CompletableFuture lets you run tasks asynchronously and handle results when ready.",
+    "middle": "CompletableFuture supports async tasks, chaining, and callbacks. It simplifies async code and error handling.",
+    "senior": "CompletableFuture enables non-blocking, composable async workflows. Use thenApply, thenAccept, exceptionally, and combine multiple futures. Prefer for modern async programming.",
+    "tricky": "CompletableFuture supports complex async pipelines, error handling, and composition. Analyze thread pool usage, exception propagation, and performance. Prefer for scalable, reactive systems."
+  }
+}
