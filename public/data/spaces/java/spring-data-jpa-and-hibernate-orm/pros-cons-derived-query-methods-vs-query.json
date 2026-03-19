@@ -1,0 +1,10 @@
+{
+  "id": "pros-cons-derived-query-methods-vs-query",
+  "title": "What are the pros and cons of using Spring Data JPA's derived query methods versus @Query?",
+  "answers": {
+    "junior": "Derived query methods are easy to use for simple queries. @Query is better for complex or custom queries.",
+    "middle": "Derived methods are concise and maintainable, but limited for complex conditions. @Query offers flexibility for advanced queries, but is more verbose and error-prone.",
+    "senior": "Use derived methods for straightforward queries, switch to @Query for advanced requirements. Combining both is common, but avoid overusing derived methods for complex logic. Validate native queries for portability and security.",
+    "tricky": "Native SQL in @Query can introduce portability and security issues. Derived methods may become unreadable for complex queries. Always monitor query performance and correctness, and prefer JPQL unless native SQL is required."
+  }
+}

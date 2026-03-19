@@ -1,0 +1,10 @@
+{
+  "id": "primary-advantage-of-jpa-over-jdbc",
+  "title": "Can you explain the primary advantage of using JPA over plain JDBC?",
+  "answers": {
+    "junior": "JPA makes it easier to work with databases in Java by letting you use objects instead of writing SQL for everything. It saves time and reduces errors.",
+    "middle": "JPA provides an object-oriented way to access databases, reducing boilerplate code and improving maintainability. It handles mapping, transactions, and queries, while JDBC requires manual SQL and connection management.",
+    "senior": "JPA abstracts database access, supports automatic mapping, caching, and transaction management. It enables rapid development and easier refactoring, while JDBC is error-prone and lacks support for complex relationships. JPA is preferred for most enterprise applications.",
+    "tricky": "JPA’s abstraction improves productivity but can hide performance bottlenecks. Advanced scenarios may require tuning or direct JDBC for custom queries. JPA’s portability and integration with frameworks like Spring Data JPA enable rapid development, but developers must monitor query generation and transaction boundaries to avoid pitfalls."
+  }
+}

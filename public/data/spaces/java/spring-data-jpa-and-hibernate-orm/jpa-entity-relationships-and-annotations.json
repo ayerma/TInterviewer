@@ -1,0 +1,10 @@
+{
+  "id": "jpa-entity-relationships-and-annotations",
+  "title": "How does JPA handle relationships between entities, and what annotations are used for defining them?",
+  "answers": {
+    "junior": "JPA uses annotations like @OneToOne, @OneToMany, @ManyToOne, and @ManyToMany to define relationships between entities.",
+    "middle": "Relationships are mapped using annotations. Use @OneToMany on the parent and @ManyToOne on the child. Cascade and fetch options control persistence and loading.",
+    "senior": "Properly managing relationships is crucial for performance and data integrity. Use mappedBy for bidirectional mapping, cascade for persistence, and fetch strategies for loading. Join tables are defined with @JoinColumn or @JoinTable.",
+    "tricky": "Incorrect cascade or fetch settings can cause unintended database operations or excessive loading. Always consider performance and integrity when designing entity relationships. Advanced mappings may require custom join tables and careful ownership management."
+  }
+}

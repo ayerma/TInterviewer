@@ -1,0 +1,10 @@
+{
+  "id": "difference-between-findby-and-query-method-keywords",
+  "title": "What is the difference between the findBy and query method keywords provided by Spring Data JPA?",
+  "answers": {
+    "junior": "findBy lets you create queries by naming methods after entity fields. @Query lets you write custom queries using JPQL or SQL.",
+    "middle": "findBy is used for simple property-based lookups, automatically generating queries. @Query allows custom JPQL or SQL for complex queries. Use findBy for maintainability, @Query for flexibility.",
+    "senior": "findBy leverages query derivation for concise, type-safe queries. @Query provides full control for advanced logic, joins, or projections. Prefer findBy for simple queries, switch to @Query for complex requirements.",
+    "tricky": "Overusing findBy for complex logic can reduce clarity and performance. Always validate custom queries for correctness and efficiency. Use native SQL in @Query only when necessary, and monitor query performance to avoid N+1 issues."
+  }
+}

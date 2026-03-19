@@ -1,0 +1,10 @@
+{
+  "id": "differences-between-fetchtype-lazy-and-eager",
+  "title": "What are the differences between FetchType.LAZY and FetchType.EAGER in JPA, and when should you use each?",
+  "answers": {
+    "junior": "LAZY loads related data only when needed. EAGER loads related data immediately with the parent entity.",
+    "middle": "LAZY is preferred for large or rarely accessed collections. EAGER is useful for small, frequently used relationships. LAZY reduces memory usage and improves performance.",
+    "senior": "Default to LAZY for collections, use EAGER only when justified. EAGER can cause performance issues like N+1 selects. Always consider transaction boundaries, as LAZY fields accessed outside a transaction can cause errors.",
+    "tricky": "Improper use of EAGER can lead to excessive joins and performance bottlenecks. Use DTOs or fetch joins for complex queries. Monitor entity graphs and transaction boundaries to avoid LazyInitializationException."
+  }
+}

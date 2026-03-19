@@ -1,0 +1,10 @@
+{
+  "id": "entity-graphs-in-jpa-and-query-performance",
+  "title": "What are Entity Graphs in JPA and how do they improve query performance in complex object graphs?",
+  "answers": {
+    "junior": "Entity Graphs let you specify which related entities to load, improving performance by reducing unnecessary queries.",
+    "middle": "Entity Graphs are used to control fetch strategies for related entities. They help avoid N+1 problems and optimize query performance.",
+    "senior": "Entity Graphs allow fine-grained control over loading related entities. Use @EntityGraph in Spring Data JPA to optimize queries and reduce database load. They are useful for complex object graphs.",
+    "tricky": "Improper use of Entity Graphs can lead to excessive data loading or missed relationships. Always profile and optimize entity graphs for performance. Advanced scenarios may require custom fetch plans and DTO projections."
+  }
+}

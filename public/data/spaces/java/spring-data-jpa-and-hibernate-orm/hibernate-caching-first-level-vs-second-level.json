@@ -1,0 +1,10 @@
+{
+  "id": "hibernate-caching-first-level-vs-second-level",
+  "title": "How does Hibernate's caching work, and what are the differences between the first-level cache and second-level cache?",
+  "answers": {
+    "junior": "Hibernate uses two types of cache: first-level (session) and second-level (shared across sessions). First-level cache is always enabled.",
+    "middle": "First-level cache stores entities within a session, second-level cache is shared and configurable. Second-level cache improves performance by reducing database hits.",
+    "senior": "First-level cache is session-scoped and cannot be disabled. Second-level cache is configurable, supports various providers, and is useful for read-heavy applications. Proper configuration is key for performance.",
+    "tricky": "Improper cache configuration can cause stale data or memory issues. Second-level cache must be carefully managed in clustered environments. Monitor cache statistics and eviction policies for optimal performance."
+  }
+}

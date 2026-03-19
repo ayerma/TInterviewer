@@ -1,0 +1,10 @@
+{
+  "id": "role-of-entitymanager-in-jpa",
+  "title": "What is the role of the EntityManager in JPA, and how is it typically used in applications?",
+  "answers": {
+    "junior": "EntityManager is used to manage and save entities in JPA. It helps perform database operations like save, update, and delete.",
+    "middle": "EntityManager is the main interface for CRUD operations, queries, and transaction management in JPA. It tracks entity states and synchronizes changes with the database.",
+    "senior": "EntityManager manages the persistence context, handles entity lifecycle, and ensures changes are synchronized during transactions. In Spring, it is injected via @PersistenceContext and used for custom queries or batch operations.",
+    "tricky": "Improper transaction handling or mixing detached and managed entities can cause unexpected behavior. EntityManager’s caching and change tracking are crucial for performance. Advanced use cases require careful management of entity states and transaction boundaries."
+  }
+}

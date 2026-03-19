@@ -1,0 +1,10 @@
+{
+  "id": "implement-custom-repository-method-in-spring-data-jpa",
+  "title": "How can you implement a custom repository method in Spring Data JPA, and when should this be used?",
+  "answers": {
+    "junior": "You can add custom methods to your repository interface for special queries or operations not covered by default methods.",
+    "middle": "Custom repository methods are used for queries or operations that aren’t supported by default. Implement them in a separate class and link with your repository interface.",
+    "senior": "Custom methods are implemented in a class with the same name as the repository plus 'Impl'. Use @Repository and inject dependencies as needed. Use for complex queries, batch operations, or business logic.",
+    "tricky": "Custom implementations can introduce complexity and maintenance challenges. Always document and test custom methods. Advanced use cases may require direct EntityManager access or native queries for performance."
+  }
+}
