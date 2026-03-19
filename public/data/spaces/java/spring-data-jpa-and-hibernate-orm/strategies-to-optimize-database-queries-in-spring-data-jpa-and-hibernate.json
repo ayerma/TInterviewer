@@ -1,0 +1,10 @@
+{
+  "id": "strategies-to-optimize-database-queries-in-spring-data-jpa-and-hibernate",
+  "title": "What strategies would you use to optimize database queries in an application using Spring Data JPA and Hibernate?",
+  "answers": {
+    "junior": "Use indexes, write efficient queries, and avoid loading unnecessary data to optimize performance.",
+    "middle": "Optimize queries by using fetch joins, entity graphs, and batch fetching. Monitor query logs and use indexes. Avoid N+1 problems and unnecessary data loading.",
+    "senior": "Use DTO projections, query optimization, and proper relationship mapping. Profile queries, monitor cache usage, and tune Hibernate settings. Always validate performance in production.",
+    "tricky": "Advanced strategies include custom query plans, tuning Hibernate’s cache, and using profiling tools. Monitor query execution and database statistics. Optimize entity graphs and batch operations for large datasets."
+  }
+}

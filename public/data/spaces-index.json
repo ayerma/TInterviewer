@@ -301,6 +301,88 @@
         ]
       }
     ]
+  },
+  {
+    "id": "spring-data-jpa-and-hibernate-orm",
+    "name": "Spring Data JPA and Hibernate ORM",
+    "description": "Interview questions covering Spring Data JPA and Hibernate ORM concepts, usage, and best practices.",
+    "questions": [
+      {
+        "id": "what-is-spring-data-jpa-and-how-does-it-relate-to-hibernate-orm",
+        "title": "What is Spring Data JPA and how does it relate to Hibernate ORM?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/what-is-spring-data-jpa-and-how-does-it-relate-to-hibernate-orm.json"
+      },
+      {
+        "id": "primary-advantage-of-jpa-over-jdbc",
+        "title": "Can you explain the primary advantage of using JPA over plain JDBC?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/primary-advantage-of-jpa-over-jdbc.json"
+      },
+      {
+        "id": "core-interfaces-provided-by-spring-data-jpa",
+        "title": "What are the core interfaces provided by Spring Data JPA?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/core-interfaces-provided-by-spring-data-jpa.json"
+      },
+      {
+        "id": "entity-in-jpa-and-annotation",
+        "title": "What is an Entity in JPA and how do you annotate a class to represent an entity?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/entity-in-jpa-and-annotation.json"
+      },
+      {
+        "id": "id-annotation-in-jpa-and-why-required",
+        "title": "How does the @Id annotation in JPA work, and why is it required?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/id-annotation-in-jpa-and-why-required.json"
+      },
+      {
+        "id": "role-of-entitymanager-in-jpa",
+        "title": "What is the role of the EntityManager in JPA, and how is it typically used in applications?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/role-of-entitymanager-in-jpa.json"
+      },
+      {
+        "id": "difference-between-findby-and-query-method-keywords",
+        "title": "What is the difference between the findBy and query method keywords provided by Spring Data JPA?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/difference-between-findby-and-query-method-keywords.json"
+      },
+      {
+        "id": "pros-cons-derived-query-methods-vs-query",
+        "title": "What are the pros and cons of using Spring Data JPA's derived query methods versus @Query?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/pros-cons-derived-query-methods-vs-query.json"
+      },
+      {
+        "id": "jpa-entity-relationships-and-annotations",
+        "title": "How does JPA handle relationships between entities, and what annotations are used for defining them?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/jpa-entity-relationships-and-annotations.json"
+      },
+      {
+        "id": "differences-between-fetchtype-lazy-and-eager",
+        "title": "What are the differences between FetchType.LAZY and FetchType.EAGER in JPA, and when should you use each?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/differences-between-fetchtype-lazy-and-eager.json"
+      },
+      {
+        "id": "hibernate-caching-first-level-vs-second-level",
+        "title": "How does Hibernate's caching work, and what are the differences between the first-level cache and second-level cache?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/hibernate-caching-first-level-vs-second-level.json"
+      },
+      {
+        "id": "n-plus-one-problem-in-hibernate-and-mitigation",
+        "title": "What is the N+1 problem in Hibernate, and how can it be mitigated in Spring Data JPA?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/n-plus-one-problem-in-hibernate-and-mitigation.json"
+      },
+      {
+        "id": "implement-custom-repository-method-in-spring-data-jpa",
+        "title": "How can you implement a custom repository method in Spring Data JPA, and when should this be used?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/implement-custom-repository-method-in-spring-data-jpa.json"
+      },
+      {
+        "id": "entity-graphs-in-jpa-and-query-performance",
+        "title": "What are Entity Graphs in JPA and how do they improve query performance in complex object graphs?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/entity-graphs-in-jpa-and-query-performance.json"
+      },
+      {
+        "id": "strategies-to-optimize-database-queries-in-spring-data-jpa-and-hibernate",
+        "title": "What strategies would you use to optimize database queries in an application using Spring Data JPA and Hibernate?",
+        "filePath": "spaces/java/spring-data-jpa-and-hibernate-orm/strategies-to-optimize-database-queries-in-spring-data-jpa-and-hibernate.json"
+      }
+    ]
   }
 ]
 }

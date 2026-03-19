@@ -1,0 +1,10 @@
+{
+  "id": "entity-in-jpa-and-annotation",
+  "title": "What is an Entity in JPA and how do you annotate a class to represent an entity?",
+  "answers": {
+    "junior": "An Entity is a Java class that represents a table in the database. You use the @Entity annotation to mark the class as an entity.",
+    "middle": "A JPA Entity is a domain object mapped to a database table. Annotate the class with @Entity and mark the primary key with @Id. Entities must have a no-argument constructor and typically use @Table for custom table names.",
+    "senior": "Entities encapsulate business logic and persistence details. Use @Entity, @Table, and @Id for mapping. Best practices include defining equals/hashCode based on the primary key and avoiding business fields for identity. Hibernate relies on these annotations for mapping.",
+    "tricky": "Missing @Id or using unsupported types for the primary key causes runtime errors. Entities should avoid exposing persistence details and must be designed for performance and maintainability. Advanced mappings may require @EmbeddedId or @IdClass for composite keys."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "id-annotation-in-jpa-and-why-required",
+  "title": "How does the @Id annotation in JPA work, and why is it required?",
+  "answers": {
+    "junior": "The @Id annotation marks a field as the primary key of an entity. It is required so each entity can be uniquely identified.",
+    "middle": "@Id marks the primary key field in a JPA entity. It enables JPA to map objects to database rows and perform operations like find, update, and delete. The field can be simple or composite.",
+    "senior": "@Id is essential for entity management and persistence context tracking. Pairing @Id with @GeneratedValue allows auto-incremented keys. Numeric types are preferred for performance. Omitting @Id prevents the entity from being managed by JPA.",
+    "tricky": "@Id fields must be immutable after creation. Using @EmbeddedId or @IdClass enables composite keys. Incorrect primary key design can lead to performance and consistency issues. Always validate key types and mapping strategies."
+  }
+}

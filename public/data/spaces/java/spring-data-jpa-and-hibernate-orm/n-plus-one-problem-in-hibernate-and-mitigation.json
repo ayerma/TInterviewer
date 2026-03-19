@@ -1,0 +1,10 @@
+{
+  "id": "n-plus-one-problem-in-hibernate-and-mitigation",
+  "title": "What is the N+1 problem in Hibernate, and how can it be mitigated in Spring Data JPA?",
+  "answers": {
+    "junior": "The N+1 problem happens when one query loads a list, and then N more queries load related data for each item. It slows down performance.",
+    "middle": "N+1 occurs when fetching a collection causes additional queries for each item. Use fetch joins or entity graphs to avoid it. Always monitor query logs.",
+    "senior": "Mitigate N+1 by using fetch joins, entity graphs, or batch fetching. Analyze query plans and optimize relationships. Spring Data JPA supports @EntityGraph and custom queries to address this issue.",
+    "tricky": "Ignoring N+1 can lead to severe performance degradation. Use profiling tools to detect it. Advanced mitigation includes DTO projections and query optimization. Always validate query performance in production."
+  }
+}

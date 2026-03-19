@@ -1,0 +1,10 @@
+{
+  "id": "core-interfaces-provided-by-spring-data-jpa",
+  "title": "What are the core interfaces provided by Spring Data JPA?",
+  "answers": {
+    "junior": "Spring Data JPA provides interfaces like Repository and JpaRepository to help you perform database operations easily.",
+    "middle": "The main interfaces are Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository. They offer CRUD, pagination, and sorting methods. JpaRepository adds JPA-specific features.",
+    "senior": "Spring Data JPA’s core interfaces include Repository (marker), CrudRepository (CRUD), PagingAndSortingRepository (pagination/sorting), JpaRepository (JPA-specific), and JpaSpecificationExecutor (dynamic queries). These interfaces are auto-implemented by Spring, enabling seamless integration with Hibernate.",
+    "tricky": "Overusing custom queries when built-in methods suffice can lead to maintenance issues. JpaSpecificationExecutor enables complex filtering, but improper use may impact performance. Transaction boundaries and lazy loading must be considered to avoid unexpected behavior."
+  }
+}

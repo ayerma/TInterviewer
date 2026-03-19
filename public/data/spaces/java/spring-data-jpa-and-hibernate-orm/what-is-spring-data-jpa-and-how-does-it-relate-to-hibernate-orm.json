@@ -1,0 +1,10 @@
+{
+  "id": "what-is-spring-data-jpa-and-how-does-it-relate-to-hibernate-orm",
+  "title": "What is Spring Data JPA and how does it relate to Hibernate ORM?",
+  "answers": {
+    "junior": "Spring Data JPA is a part of the Spring framework that simplifies database access using JPA. Hibernate ORM is a tool that helps map Java objects to database tables. Spring Data JPA uses Hibernate to handle the actual database operations.",
+    "middle": "Spring Data JPA provides easy-to-use repository interfaces for CRUD operations and custom queries, reducing boilerplate code. Hibernate ORM is the JPA implementation that manages object-relational mapping and database transactions. Spring Data JPA delegates persistence tasks to Hibernate when configured as the JPA provider.",
+    "senior": "Spring Data JPA abstracts JPA and integrates tightly with Spring Boot, offering features like query derivation, pagination, and custom JPQL/native queries. Hibernate ORM, as the underlying JPA provider, manages entity states, caching, and transaction boundaries. Developers benefit from rapid development and robust transaction handling, but must be aware of Hibernate-specific behaviors like lazy loading and caching.",
+    "tricky": "Spring Data JPA’s abstraction enables rapid prototyping, but advanced use cases may require direct Hibernate APIs for performance tuning. Hibernate’s session and caching mechanisms can introduce subtle bugs, such as LazyInitializationException or stale data. Production systems should monitor Hibernate’s cache and query plans, and understand Spring Data JPA’s limitations regarding batch operations and entity graphs."
+  }
+}
