@@ -54,6 +54,27 @@ jobs:
       - name: Verify DMtools installation
         run: dmtools -v || echo "dmtools version check done"
 
+      - name: Verify required credentials
+        env:
+          JIRA_BASE_PATH: ${{ vars.JIRA_BASE_PATH }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_AUTH_TYPE: ${{ vars.JIRA_AUTH_TYPE }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "--- Credential presence check ---"
+          [ -n "$JIRA_BASE_PATH" ]  && echo "JIRA_BASE_PATH:  SET"  || echo "JIRA_BASE_PATH:  MISSING"
+          [ -n "$JIRA_EMAIL" ]      && echo "JIRA_EMAIL:      SET"  || echo "JIRA_EMAIL:      MISSING"
+          [ -n "$JIRA_API_TOKEN" ]  && echo "JIRA_API_TOKEN:  SET"  || echo "JIRA_API_TOKEN:  MISSING"
+          [ -n "$JIRA_AUTH_TYPE" ]  && echo "JIRA_AUTH_TYPE:  SET (value: $JIRA_AUTH_TYPE)"  || echo "JIRA_AUTH_TYPE:  MISSING"
+          [ -n "$GEMINI_API_KEY" ]  && echo "GEMINI_API_KEY:  SET"  || echo "GEMINI_API_KEY:  MISSING"
+          echo "---------------------------------"
+          # Fail fast if any required credential is missing
+          if [ -z "$JIRA_BASE_PATH" ] || [ -z "$JIRA_EMAIL" ] || [ -z "$JIRA_API_TOKEN" ] || [ -z "$JIRA_AUTH_TYPE" ] || [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::One or more required credentials are missing. See check above."
+            exit 1
+          fi
+
       - name: Run Teammate - Process dm-creator tickets
         env:
           PATH: "/home/runner/.local/bin:/home/runner/.dmtools/bin:/bin:/usr/bin:$PATH"
