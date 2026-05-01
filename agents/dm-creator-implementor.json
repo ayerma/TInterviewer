@@ -4,8 +4,9 @@
     "agentParams": {
       "aiRole": "Senior Java Technical Content Creator specializing in interview preparation",
       "instructions": [
-        "./agents/instructions/dm-reator-role.md"
-      ]
+        "./agents/instructions/dm-creator-role.md"
+      ],
+      "formattingRules": "Return a single valid JSON object (no markdown, no code fences) with exactly three fields: \"filePath\" (string), \"indexEntry\" (object), and \"content\" (object). Do not include any explanation or text outside the JSON."
     },
     "inputJql": "labels = \"dm-creator\" AND status = \"In Progress\"",
     "outputType": "none",
