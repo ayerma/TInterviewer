@@ -10,8 +10,8 @@ function action(params) {
             return (typeof l === 'string') ? l : (l.name || '');
         });
 
-        if (labels.indexOf('dm-reator-processing') !== -1) {
-            return { skip: true, reason: 'Ticket ' + ticketKey + ' is already being processed (dm-reator-processing label present).' };
+        if (labels.indexOf('dm-creator-processing') !== -1) {
+            return { skip: true, reason: 'Ticket ' + ticketKey + ' is already being processed (dm-creator-processing label present).' };
         }
 
         return { success: true };

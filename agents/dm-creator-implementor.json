@@ -7,9 +7,9 @@
         "./agents/instructions/dm-reator-role.md"
       ]
     },
-    "inputJql": "labels = \"dm-reator\" AND status != Done AND status != \"In Progress\"",
+    "inputJql": "labels = \"dm-creator\" AND status = \"In Progress\"",
     "outputType": "none",
-    "preJSAction": "agents/js/dmReatorPreAction.js",
-    "postJSAction": "agents/js/dmReatorPostAction.js"
+    "preJSAction": "agents/js/dmCreatorPreAction.js",
+    "postJSAction": "agents/js/dmCreatorPostAction.js"
   }
 }

@@ -1,9 +1,15 @@
-name: DMtools - Implement dm-reator Tickets
+name: DMtools - Implement dm-creator Tickets
 
 on:
+  # Manual trigger from GitHub Actions UI
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *' # Every 6 hours
+
+  # Triggered by Jira webhook when dm-creator label is added to a ticket.
+  # Jira webhook URL: https://api.github.com/repos/ayerma/TInterviewer/dispatches
+  # Jira webhook payload: { "event_type": "dm-creator-ticket" }
+  # Authorization header: Bearer <PAT with repo scope>
+  repository_dispatch:
+    types: [dm-creator-ticket]
 
 permissions:
   contents: write
@@ -55,7 +61,7 @@ jobs:
         run: |
           CI_RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           echo "[INFO] Processing dm-reator tickets..."
-          dmtools run agents/dm-reator-implementor.json --ciRunUrl "${CI_RUN_URL}"
+          dmtools run agents/dm-creator-implementor.json --ciRunUrl "${CI_RUN_URL}"
 
       - name: Check for generated content
         id: check_files
@@ -95,12 +101,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add public/data/
-          git commit -m "feat: add interview questions from dm-reator tickets [skip ci]"
+            git commit -m "feat: add interview questions from dm-creator tickets [skip ci]"
           git push origin "$BRANCH"
 
           gh pr create \
-            --title "feat: Add interview questions from dm-reator tickets" \
-            --body "Automatically generated interview questions from Jira tickets labeled \`dm-reator\`.
+            --title "feat: Add interview questions from dm-creator tickets" \
+            --body "Automatically generated interview questions from Jira tickets labeled \`dm-creator\` in status In Progress.
 
 **CI Run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 

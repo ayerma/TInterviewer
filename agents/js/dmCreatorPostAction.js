@@ -12,7 +12,7 @@ function action(params) {
 
         if (!aiResponse || aiResponse.trim() === '') {
             jira_post_comment(ticketKey,
-                '[dm-reator] Failed to generate content: AI response was empty. Please check the CI run for details.'
+                '[dm-creator] Failed to generate content: AI response was empty. Please check the CI run for details.'
             );
             return { success: false, error: 'Empty AI response for ticket ' + ticketKey };
         }
@@ -29,7 +29,7 @@ function action(params) {
             parsed = JSON.parse(jsonStr);
         } catch (parseErr) {
             jira_post_comment(ticketKey,
-                '[dm-reator] Failed to parse generated JSON for ticket ' + ticketKey + '.\nError: ' + parseErr.toString() +
+                '[dm-creator] Failed to parse generated JSON for ticket ' + ticketKey + '.\nError: ' + parseErr.toString() +
                 '\n\nRaw response (first 500 chars):\n' + aiResponse.substring(0, 500)
             );
             return { success: false, error: 'JSON parse error: ' + parseErr.toString() };
@@ -38,7 +38,7 @@ function action(params) {
         // Validate required fields
         if (!parsed.filePath || !parsed.content || !parsed.indexEntry) {
             jira_post_comment(ticketKey,
-                '[dm-reator] AI output is missing required fields (filePath, content, or indexEntry) for ticket ' + ticketKey + '.'
+                '[dm-creator] AI output is missing required fields (filePath, content, or indexEntry) for ticket ' + ticketKey + '.'
             );
             return { success: false, error: 'Missing required fields in AI output' };
         }
@@ -53,7 +53,7 @@ function action(params) {
 
         // Post success comment on the Jira ticket
         jira_post_comment(ticketKey,
-            '[dm-reator] Content generated successfully!\n\n' +
+            '[dm-creator] Content generated successfully!\n\n' +
             'Question: ' + parsed.content.title + '\n' +
             'File: ' + parsed.filePath + '\n\n' +
             'A pull request will be created by the CI pipeline shortly.'
