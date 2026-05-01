@@ -29,17 +29,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
       - name: Cache DMtools
         id: cache-dmtools
         uses: actions/cache@v4
         with:
           path: ~/.dmtools
-          key: dmtools-v1.7.157-${{ runner.os }}
+          key: dmtools-v1.7.179-${{ runner.os }}
 
       - name: Install DMtools CLI
         if: steps.cache-dmtools.outputs.cache-hit != 'true'
         run: |
-          curl -fsSL https://raw.githubusercontent.com/IstiN/dmtools/main/install.sh | bash
+          curl -fsSL https://raw.githubusercontent.com/epam/dm.ai/main/install | bash
 
       - name: Add DMtools to PATH
         run: |
@@ -47,7 +53,7 @@ jobs:
 
       - name: Verify DMtools installation
         run: |
-          dmtools || echo "DMtools verification done"
+          dmtools --version
 
       - name: Run Teammate - Process dm-creator tickets
         env:
@@ -81,7 +87,7 @@ jobs:
         if: steps.check_files.outputs.has_content == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Copy questions to public/data and update spaces-index
         if: steps.check_files.outputs.has_content == 'true'

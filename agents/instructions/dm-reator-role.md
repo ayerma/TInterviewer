@@ -46,15 +46,15 @@ You MUST respond with a single valid JSON object (no markdown code blocks, no pr
 
 Choose the most appropriate `topicId` from this list:
 
-| topicId | Name |
-|---------|------|
-| `core-java-fundamentals-oop` | Core Java Fundamentals and OOP Principles |
-| `collections` | Collections Framework |
-| `multithreading-and-concurrency` | Multithreading and Concurrency |
-| `java-modern-features` | Java Modern Features (Java 8+) |
-| `spring-core-and-dependency-injection` | Spring Core and Dependency Injection |
-| `spring-boot-and-auto-configuration` | Spring Boot and Auto-Configuration |
-| `spring-data-jpa-and-hibernate-orm` | Spring Data JPA and Hibernate ORM |
+| topicId                                | Name                                      |
+| -------------------------------------- | ----------------------------------------- |
+| `core-java-fundamentals-oop`           | Core Java Fundamentals and OOP Principles |
+| `collections`                          | Collections Framework                     |
+| `multithreading-and-concurrency`       | Multithreading and Concurrency            |
+| `java-modern-features`                 | Java Modern Features (Java 8+)            |
+| `spring-core-and-dependency-injection` | Spring Core and Dependency Injection      |
+| `spring-boot-and-auto-configuration`   | Spring Boot and Auto-Configuration        |
+| `spring-data-jpa-and-hibernate-orm`    | Spring Data JPA and Hibernate ORM         |
 
 If none fit, use the closest match.
 
