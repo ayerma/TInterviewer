@@ -1,0 +1,111 @@
+name: DMtools - Implement dm-reator Tickets
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  implement-tickets:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: dm-reator-implementor
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache DMtools
+        id: cache-dmtools
+        uses: actions/cache@v4
+        with:
+          path: ~/.dmtools
+          key: dmtools-v1.7.157-${{ runner.os }}
+
+      - name: Install DMtools CLI
+        if: steps.cache-dmtools.outputs.cache-hit != 'true'
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/IstiN/dmtools/main/install.sh | bash
+
+      - name: Add DMtools to PATH
+        run: |
+          echo "$HOME/.dmtools/bin" >> $GITHUB_PATH
+
+      - name: Verify DMtools installation
+        run: |
+          dmtools || echo "DMtools verification done"
+
+      - name: Run Teammate - Process dm-reator tickets
+        env:
+          AGENT_DISABLE_WATCHDOG: "1"
+          # Jira
+          JIRA_BASE_PATH: ${{ vars.JIRA_BASE_PATH }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_AUTH_TYPE: Basic
+          # AI
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DEFAULT_LLM: gemini
+          DEFAULT_TRACKER: jira
+        run: |
+          CI_RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          echo "[INFO] Processing dm-reator tickets..."
+          dmtools run agents/dm-reator-implementor.json --ciRunUrl "${CI_RUN_URL}"
+
+      - name: Check for generated content
+        id: check_files
+        run: |
+          if [ -d "output/questions" ] && [ "$(ls -A output/questions 2>/dev/null)" ]; then
+            echo "has_content=true" >> $GITHUB_OUTPUT
+            echo "[INFO] Generated question files found"
+          else
+            echo "has_content=false" >> $GITHUB_OUTPUT
+            echo "[INFO] No new question files generated - nothing to commit"
+          fi
+
+      - name: Setup Node.js
+        if: steps.check_files.outputs.has_content == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Copy questions to public/data and update spaces-index
+        if: steps.check_files.outputs.has_content == 'true'
+        run: |
+          echo "[INFO] Copying generated question files to public/data/spaces/..."
+          cp -r output/questions/spaces/. public/data/spaces/
+
+          if [ -d "output/index-entries" ] && [ "$(ls -A output/index-entries 2>/dev/null)" ]; then
+            echo "[INFO] Updating spaces-index.json with new entries..."
+            node .github/scripts/update-spaces-index.js
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_files.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="dm-reator/$(date +%Y%m%d-%H%M%S)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add public/data/
+          git commit -m "feat: add interview questions from dm-reator tickets [skip ci]"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "feat: Add interview questions from dm-reator tickets" \
+            --body "Automatically generated interview questions from Jira tickets labeled \`dm-reator\`.
+
+**CI Run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+> Review the generated JSON files before merging." \
+            --base main \
+            --head "$BRANCH"
+
+          echo "[SUCCESS] Pull request created: $BRANCH"

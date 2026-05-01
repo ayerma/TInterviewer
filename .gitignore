@@ -26,3 +26,19 @@ yarn-error.log*
 
 # AI Session Logs
 tech-*.txt
+.temp
+
+# DMtools (contains secrets)
+dmtools.env
+dmtools-local.env
+.dmtools/
+
+# Setup scripts (contain credentials)
+.github/scripts/setup-secrets.sh
+
+.env
+
+# DMtools configuration (contains secrets)
+dmtools.env
+dmtools-local.env
+.dmtools/

@@ -1,0 +1,15 @@
+{
+  "name": "Teammate",
+  "params": {
+    "agentParams": {
+      "aiRole": "Senior Java Technical Content Creator specializing in interview preparation",
+      "instructions": [
+        "./agents/instructions/dm-reator-role.md"
+      ]
+    },
+    "inputJql": "labels = \"dm-reator\" AND status != Done AND status != \"In Progress\"",
+    "outputType": "none",
+    "preJSAction": "agents/js/dmReatorPreAction.js",
+    "postJSAction": "agents/js/dmReatorPostAction.js"
+  }
+}
