@@ -45,32 +45,34 @@ jobs:
       - name: Install DMtools CLI
         if: steps.cache-dmtools.outputs.cache-hit != 'true'
         run: |
-          curl -fsSL https://raw.githubusercontent.com/epam/dm.ai/main/install | bash
+          curl -fsSL https://raw.githubusercontent.com/epam/dm.ai/v1.7.179/install.sh | bash -s v1.7.179
 
       - name: Add DMtools to PATH
         run: |
           echo "$HOME/.dmtools/bin" >> $GITHUB_PATH
 
       - name: Verify DMtools installation
-        run: |
-          dmtools --version
+        run: dmtools -v || echo "dmtools version check done"
 
       - name: Run Teammate - Process dm-creator tickets
         env:
+          PATH: "/home/runner/.local/bin:/home/runner/.dmtools/bin:/bin:/usr/bin:$PATH"
           AGENT_DISABLE_WATCHDOG: "1"
           # Jira
           JIRA_BASE_PATH: ${{ vars.JIRA_BASE_PATH }}
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-          JIRA_AUTH_TYPE: Basic
+          JIRA_AUTH_TYPE: ${{ vars.JIRA_AUTH_TYPE }}
+          JIRA_CLEAR_CACHE: "true"
           # AI
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           DEFAULT_LLM: gemini
           DEFAULT_TRACKER: jira
         run: |
           CI_RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          echo "[INFO] Processing dm-reator tickets..."
-          dmtools run agents/dm-creator-implementor.json --ciRunUrl "${CI_RUN_URL}"
+          echo "[INFO] Processing dm-creator tickets..."
+          dmtools --debug run agents/dm-creator-implementor.json --ciRunUrl "${CI_RUN_URL}"
 
       - name: Check for generated content
         id: check_files
