@@ -16,7 +16,7 @@ App (Root Component)
 
 ## App Component
 
-**File**: `src/App.js`  
+**File**: `src/App.js`
 **Purpose**: Root component that manages global state and layout
 
 ### Props
@@ -63,7 +63,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ## TopicNav Component
 
-**File**: `src/components/TopicNav.js`  
+**File**: `src/components/TopicNav.js`
 **Purpose**: Renders hierarchical navigation menu for topics
 
 ### Props
@@ -121,7 +121,7 @@ renderSubtopics(subtopics); // Recursively renders nested topics
 
 ## TopicContent Component
 
-**File**: `src/components/TopicContent.js`  
+**File**: `src/components/TopicContent.js`
 **Purpose**: Displays content for selected topic at chosen complexity level
 
 ### Props
@@ -169,7 +169,7 @@ topic.content = {
 
 ## ComplexitySwitch Component
 
-**File**: `src/components/ComplexitySwitch.js`  
+**File**: `src/components/ComplexitySwitch.js`
 **Purpose**: Provides interface for switching between complexity levels
 
 ### Props
@@ -215,7 +215,7 @@ topic.content = {
 
 ## ThemeSwitch Component
 
-**File**: `src/components/ThemeSwitch.js`  
+**File**: `src/components/ThemeSwitch.js`
 **Purpose**: Toggles between light and dark themes
 
 ### Props

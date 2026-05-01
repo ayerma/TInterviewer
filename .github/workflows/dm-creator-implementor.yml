@@ -15,11 +15,14 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   implement-tickets:
     runs-on: ubuntu-latest
     concurrency:
-      group: dm-reator-implementor
+      group: dm-creator-implementor
       cancel-in-progress: false
 
     steps:
@@ -46,7 +49,7 @@ jobs:
         run: |
           dmtools || echo "DMtools verification done"
 
-      - name: Run Teammate - Process dm-reator tickets
+      - name: Run Teammate - Process dm-creator tickets
         env:
           AGENT_DISABLE_WATCHDOG: "1"
           # Jira
@@ -78,7 +81,7 @@ jobs:
         if: steps.check_files.outputs.has_content == 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Copy questions to public/data and update spaces-index
         if: steps.check_files.outputs.has_content == 'true'
@@ -96,22 +99,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BRANCH="dm-reator/$(date +%Y%m%d-%H%M%S)"
+          TICKETS=$(ls output/index-entries/*.json 2>/dev/null | xargs -I{} basename {} .json | tr '\n' '_' | sed 's/_$//')
+          BRANCH="dm-creator/${TICKETS}-$(date +%Y%m%d-%H%M%S)"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add public/data/
-            git commit -m "feat: add interview questions from dm-creator tickets [skip ci]"
+          git commit -m "feat: add interview questions from dm-creator tickets [skip ci]"
           git push origin "$BRANCH"
 
-          gh pr create \
-            --title "feat: Add interview questions from dm-creator tickets" \
-            --body "Automatically generated interview questions from Jira tickets labeled \`dm-creator\` in status In Progress.
-
-**CI Run**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-
-> Review the generated JSON files before merging." \
-            --base main \
-            --head "$BRANCH"
+          gh pr create --title "feat: Add interview questions from dm-creator tickets" --body "Auto-generated from dm-creator Jira tickets. CI Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" --base main --head "$BRANCH"
 
           echo "[SUCCESS] Pull request created: $BRANCH"
