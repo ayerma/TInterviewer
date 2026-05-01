@@ -6,7 +6,8 @@
       "instructions": [
         "./agents/instructions/dm-creator-role.md"
       ],
-      "formattingRules": "Return a single valid JSON object (no markdown, no code fences) with exactly three fields: \"filePath\" (string), \"indexEntry\" (object), and \"content\" (object). Do not include any explanation or text outside the JSON."
+      "formattingRules": "Return a single valid JSON object (no markdown, no code fences) with exactly three fields: \"filePath\" (string), \"indexEntry\" (object), and \"content\" (object). Do not include any explanation or text outside the JSON.",
+      "fewShots": "Input: Jira ticket titled 'HashMap vs Hashtable' in topic 'collections' for space 'java'. Output: {\"filePath\":\"spaces/java/collections/hashmap-vs-hashtable.json\",\"indexEntry\":{\"id\":\"hashmap-vs-hashtable\",\"title\":\"HashMap vs Hashtable\"},\"content\":{\"id\":\"hashmap-vs-hashtable\",\"title\":\"HashMap vs Hashtable\",\"answers\":{\"junior\":\"HashMap is not synchronized and allows null keys/values. Hashtable is synchronized but slower.\",\"middle\":\"HashMap is unsynchronized and permits one null key and multiple null values. Hashtable is legacy, synchronized, and forbids null. Use ConcurrentHashMap for thread-safe maps instead.\",\"senior\":\"HashMap offers O(1) average get/put with no synchronization overhead. Hashtable synchronizes every method via intrinsic locks, causing contention. ConcurrentHashMap uses segment/bucket-level locking (Java 8+: CAS + synchronized bins) for better concurrency. Hashtable is effectively obsolete.\",\"tricky\":\"If you call HashMap from multiple threads without external synchronization you can get infinite loops during rehashing (Java 6 and earlier) due to circular linked-list formation. Always use ConcurrentHashMap or Collections.synchronizedMap() in concurrent contexts.\"}}}"
     },
     "inputJql": "labels = \"dm-creator\" AND status = \"In Progress\"",
     "outputType": "none",
