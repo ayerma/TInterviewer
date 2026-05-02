@@ -59,6 +59,24 @@ function action(params) {
             'A pull request will be created by the CI pipeline shortly.'
         );
 
+        // Move ticket to Review status
+        try {
+            jira_move_to_status({ key: ticketKey, statusName: 'REVIEW' });
+        } catch (e) {
+            console.warn('[dm-creator] Could not move ' + ticketKey + ' to In Review: ' + e.toString());
+        }
+
+        // Remove the dm-creator label so this ticket is not picked up again
+        try {
+            var currentLabels = (ticket.fields.labels || []).map(function(l) {
+                return (typeof l === 'string') ? l : (l.name || '');
+            });
+            var updatedLabels = currentLabels.filter(function(l) { return l !== 'dm-creator'; });
+            jira_update_ticket({ key: ticketKey, params: { fields: { labels: updatedLabels } } });
+        } catch (e) {
+            console.warn('[dm-creator] Could not remove dm-creator label from ' + ticketKey + ': ' + e.toString());
+        }
+
         return { success: true, filePath: questionFilePath };
     } catch (error) {
         return { success: false, error: error.toString() };
