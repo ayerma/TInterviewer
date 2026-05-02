@@ -84,6 +84,16 @@
               "id": "what-are-some-common-pitfalls-or-anti-patterns-in-applying",
               "title": "What are some common pitfalls or anti-patterns in applying OOP principles in Java?",
               "filePath": "spaces/java/core-java-fundamentals-oop/what-are-some-common-pitfalls-or-anti-patterns-in-applying.json"
+            },
+            {
+              "id": "java-exception-handling-best-practices",
+              "title": "Explain Exception Handling in Java, including hierarchies, Spring integration, and best practices.",
+              "filePath": "spaces/java/core-java-fundamentals-oop/java-exception-handling-best-practices.json"
+            },
+            {
+              "id": "maven-vs-gradle-build-automation",
+              "title": "What are the differences between Maven and Gradle, and how do they manage the build lifecycle?",
+              "filePath": "spaces/java/core-java-fundamentals-oop/maven-vs-gradle-build-automation.json"
             }
           ]
         },
