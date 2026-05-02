@@ -84,6 +84,16 @@
               "id": "what-are-some-common-pitfalls-or-anti-patterns-in-applying",
               "title": "What are some common pitfalls or anti-patterns in applying OOP principles in Java?",
               "filePath": "spaces/java/core-java-fundamentals-oop/what-are-some-common-pitfalls-or-anti-patterns-in-applying.json"
+            },
+            {
+              "id": "design-patterns-in-java",
+              "title": "Explain common GoF Design Patterns and their implementation in Java",
+              "filePath": "spaces/java/core-java-fundamentals-oop/design-patterns-in-java.json"
+            },
+            {
+              "id": "jvm-architecture-memory-management-and-gc",
+              "title": "Explain JVM Architecture, Memory Management, and Garbage Collection",
+              "filePath": "spaces/java/core-java-fundamentals-oop/jvm-architecture-memory-management-and-gc.json"
             }
           ]
         },
